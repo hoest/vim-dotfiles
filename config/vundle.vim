@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-set runtimepath+=$VIM/bundle/vundle/
+set runtimepath+=$HOME/vim-dotfiles/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
