@@ -1,4 +1,4 @@
-source $VIM/config/vundle.vim
+source $HOME/vim-dotfiles/config/vundle.vim
 
 set modelines=0
 
