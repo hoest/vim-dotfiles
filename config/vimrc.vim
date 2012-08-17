@@ -65,6 +65,7 @@ set history=1000
 set autochdir
 set listchars=tab:>.,trail:.
 set list
+set fillchars+=stl:\ ,stlnc:\
 set mouse=a
 set nofoldenable
 
@@ -99,7 +100,7 @@ vnoremap / /\v
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+" set colorcolumn=85
 set linebreak
 
 " colorscheme
@@ -179,7 +180,5 @@ autocmd BufReadPost *
 " Big file => no syntax
 autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
 
-" YankRing
-" https://github.com/vim-scripts/YankRing.vim/
-nnoremap <silent> <F3> :YRShow<CR>
-inoremap <silent> <F3> <ESC>:YRShow<CR>
+" Powerline
+let g:Powerline_symbols = 'compatible'
