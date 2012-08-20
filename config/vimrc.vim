@@ -23,6 +23,8 @@ endif
 " just make things better
 scriptencoding utf-8
 set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
 set scrolloff=3
 set autoindent
 set smartindent
