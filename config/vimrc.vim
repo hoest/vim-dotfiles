@@ -124,7 +124,7 @@ if has('gui_running')
   if has("win32") || has("win64")
     set guifont=Consolas:h9:cDEFAULT
   elseif has("gui_macvim") || has("mac") || has("macunix")
-    set guifont=Menlo:h12:cDEFAULT
+    set guifont=Menlo:h12
   endif
   set columns=120
   set lines=50
