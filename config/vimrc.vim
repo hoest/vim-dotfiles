@@ -63,7 +63,7 @@ set undoreload=10000
 set lazyredraw
 set history=1000
 set autochdir
-set listchars=tab:>.,trail:.
+set listchars=tab:»·,trail:·
 set list
 set fillchars+=stl:\ ,stlnc:\
 set mouse=a
