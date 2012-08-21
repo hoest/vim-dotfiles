@@ -101,7 +101,7 @@ vnoremap / /\v
 
 " long lines
 set wrap
-set textwidth=79
+" set textwidth=79
 set formatoptions=qrn1
 " set colorcolumn=85
 set linebreak
@@ -122,7 +122,7 @@ colorscheme solarized
 " font and window size
 if has('gui_running')
   if has("win32") || has("win64")
-    set guifont=Consolas:h9:cDEFAULT
+    set guifont=Consolas:h10
   elseif has("gui_macvim") || has("mac") || has("macunix")
     set guifont=Menlo:h12
   endif
