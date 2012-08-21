@@ -101,9 +101,7 @@ vnoremap / /\v
 
 " long lines
 set wrap
-" set textwidth=79
 set formatoptions=qrn1
-" set colorcolumn=85
 set linebreak
 
 " colorscheme
