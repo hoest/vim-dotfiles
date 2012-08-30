@@ -159,8 +159,6 @@ vnoremap <left> <nop>
 vnoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
-vnoremap j gj
-vnoremap k gk
 
 " move lines up and down
 nnoremap <A-j> :m+<CR>==
