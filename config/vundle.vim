@@ -9,10 +9,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " own bundles
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'edsono/vim-matchit'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim'
 Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/syntastic.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-markdown'
