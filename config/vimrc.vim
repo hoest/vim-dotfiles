@@ -183,3 +183,6 @@ autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | end
 
 " Powerline
 let g:Powerline_symbols = 'compatible'
+
+" Vundle fix for 'set shellslash'
+au FileType vundle setlocal noshellslash
