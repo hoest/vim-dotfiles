@@ -1,4 +1,8 @@
-source $HOME/vim-dotfiles/config/vundle.vim
+if has('win32') || has('win64')
+  source $HOME/vimfiles/config/vundle.vim
+else
+  source $HOME/.vim/config/vundle.vim
+endif
 
 set modelines=0
 
