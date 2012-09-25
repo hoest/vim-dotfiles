@@ -63,7 +63,11 @@ set wildignore+=*.pyc
 set autoread
 
 set undofile
-set undodir=$HOME/vim-dotfiles/undo
+if has('win32') || has('win64')
+  set undodir=$HOME/vimfiles/undo
+else
+  set undodir=$HOME/.vim/undo
+endif
 
 set undolevels=1000
 set undoreload=10000
@@ -82,7 +86,11 @@ set clipboard=unnamed
 " no backup or swap files
 set nobackup
 set noswapfile
-set directory=$HOME/vim-dotfiles/tmp
+if has('win32') || has('win64')
+  set directory=$HOME/vimfiles/tmp
+else
+  set directory=$HOME/.vim/tmp
+endif
 
 " change the <leader> key
 let mapleader = ","
