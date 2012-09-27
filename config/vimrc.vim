@@ -107,6 +107,9 @@ set hlsearch
 " clearing highlighted searches
 nnoremap <leader><space> :nohlsearch<CR>
 
+" fix dirty xml/xhtml
+map <leader>fx :1,%s/>\s*</>\r</gg<CR>gg=G
+
 " fix vim's horribly broken default regex-handling
 nnoremap / /\v
 vnoremap / /\v
