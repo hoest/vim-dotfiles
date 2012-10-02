@@ -27,5 +27,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/Windows-PowerShell-Syntax-Plugin'
+Bundle 'kongo2002/fsharp-vim'
 
 filetype plugin indent on
