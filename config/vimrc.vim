@@ -44,7 +44,8 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set number
+" set number
+set relativenumber
 set shellslash
 
 " wildmode
@@ -78,6 +79,7 @@ set listchars=tab:»·,trail:·
 set list
 set fillchars+=stl:\ ,stlnc:\
 set mouse=a
+" set foldmethod=indent
 set nofoldenable
 
 " always yank to system clipboard
@@ -108,7 +110,11 @@ set hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
 
 " fix dirty xml/xhtml
-map <leader>fx :1,%s/>\s*</>\r</gg<CR>gg=G<CR>
+nnoremap <leader>fx :1,%s/>\s*</>\r</gg<CR>gg=G<CR>
+" fold tag
+nnoremap <leader>ft Vatzf
+" fold from current
+nnoremap <leader>fc v%zf
 
 " fix vim's horribly broken default regex-handling
 nnoremap / /\v
@@ -150,6 +156,9 @@ nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 nnoremap Q gqap
 vnoremap Q gq
 
+" reselect text that was just pasted
+nnoremap <leader>v V`]
+
 " Since I never use the ; key anyway, this is a real optimization for almost
 " all Vim commands, as I don't have to press the Shift key to form chords to
 " enter ex mode.
@@ -157,7 +166,9 @@ nnoremap ; :
 nnoremap <leader>; ;
 
 " Avoid accidental hits of <F1> while aiming for <Esc>
-noremap! <F1> <Esc>
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
 
 " Jump to matching pairs easily, with Tab
 nnoremap <Tab> %
@@ -168,10 +179,10 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-vnoremap <up> <nop>
-vnoremap <down> <nop>
-vnoremap <left> <nop>
-vnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
@@ -185,7 +196,7 @@ vnoremap <A-k> :m-2<CR>gv=gv
 
 " duplicate current line
 nnoremap <A-d> :t.<CR>
-inoremap <A-d> <Esc>:t.<CR>
+inoremap <A-d> <Esc>:t.<CR>i
 
 " Restore cursor position upon reopening files
 autocmd BufReadPost *
@@ -201,3 +212,7 @@ let g:Powerline_symbols = 'compatible'
 
 " Vundle fix for 'set shellslash'
 au FileType vundle setlocal noshellslash
+
+" Focus number setting
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
