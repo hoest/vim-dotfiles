@@ -44,8 +44,6 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-" set number
-set relativenumber
 set shellslash
 
 " wildmode
@@ -212,7 +210,3 @@ let g:Powerline_symbols = 'compatible'
 
 " Vundle fix for 'set shellslash'
 au FileType vundle setlocal noshellslash
-
-" Focus number setting
-:au FocusLost * :set number
-:au FocusGained * :set relativenumber
