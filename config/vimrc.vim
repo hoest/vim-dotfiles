@@ -1,10 +1,15 @@
+" Use vim settings, rather then vi settings (much better!)
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
 if has('win32') || has('win64')
   source $HOME/vimfiles/config/vundle.vim
 else
   source $HOME/.vim/config/vundle.vim
 endif
 
-set modelines=0
+" disable mode lines (security measure)
+set nomodeline
 
 " tab settings
 set tabstop=2
@@ -115,6 +120,7 @@ nnoremap <leader>ft Vatzf
 nnoremap <leader>fc v%zf
 
 " fix vim's horribly broken default regex-handling
+" See http://stevelosh.com/blog/2010/09/coming-home-to-vim
 nnoremap / /\v
 vnoremap / /\v
 
