@@ -14,7 +14,6 @@ endif
 Bundle 'gmarik/vundle'
 
 " own bundles
-" Bundle 'adinapoli/vim-markmultiple.git'
 Bundle 'altercation/vim-colors-solarized.git'
 Bundle 'edsono/vim-matchit.git'
 Bundle 'groenewege/vim-less.git'
@@ -24,6 +23,7 @@ Bundle 'kien/ctrlp.vim.git'
 Bundle 'kongo2002/fsharp-vim.git'
 Bundle 'Lokaltog/vim-powerline.git'
 Bundle 'msanders/snipmate.vim.git'
+Bundle 'nvie/vim-flake8.git'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'tomtom/tcomment_vim.git'
 Bundle 'tpope/vim-fugitive.git'

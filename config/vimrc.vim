@@ -216,3 +216,6 @@ let g:Powerline_symbols = 'compatible'
 
 " Vundle fix for 'set shellslash'
 au FileType vundle setlocal noshellslash
+
+" flake8 settings
+let g:flake8_ignore="E111,E501"
