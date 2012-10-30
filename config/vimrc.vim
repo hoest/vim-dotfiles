@@ -202,6 +202,10 @@ vnoremap <A-k> :m-2<CR>gv=gv
 nnoremap <A-d> :t.<CR>
 inoremap <A-d> <Esc>:t.<CR>i
 
+" YankStack keys
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_older_paste
+
 " Restore cursor position upon reopening files
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
