@@ -128,6 +128,8 @@ vnoremap / /\v
 set wrap
 set formatoptions=qrn1
 set linebreak
+set colorcolumn=80,120
+" set textwidth=79
 
 " colorscheme
 syntax on
