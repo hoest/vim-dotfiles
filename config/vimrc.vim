@@ -2,10 +2,11 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" pathogen
 if has('win32') || has('win64')
-  source $HOME/vimfiles/config/vundle.vim
+  source $HOME/vimfiles/config/pathogen.vim
 else
-  source $HOME/.vim/config/vundle.vim
+  source $HOME/.vim/config/pathogen.vim
 endif
 
 " disable mode lines (security measure)
@@ -49,6 +50,7 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+set number
 set shellslash
 
 " wildmode
@@ -225,3 +227,10 @@ au FileType vundle setlocal noshellslash
 
 " flake8 settings
 let g:flake8_ignore="E111,E501"
+
+" powershell stuff for vim
+if has("win32") || has("win64")
+  set shell=powershell
+  set shellcmdflag=-command
+endif
+
