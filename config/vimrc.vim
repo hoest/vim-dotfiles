@@ -111,6 +111,11 @@ set incsearch
 set showmatch
 set hlsearch
 
+" spell checking
+let g:spellfile_URL = ' http://ftp.vim.org/pub/vim/runtime/spell/'
+set spelllang=nl,en
+nmap <silent> <leader>s :set spell!<CR>
+
 " clearing highlighted searches
 nnoremap <leader><space> :nohlsearch<CR>
 
