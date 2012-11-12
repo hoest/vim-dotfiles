@@ -2,6 +2,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+filetype plugin indent on
+
 " pathogen
 if has('win32') || has('win64')
   source $HOME/vimfiles/config/pathogen.vim

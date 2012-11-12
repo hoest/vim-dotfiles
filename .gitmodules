@@ -46,3 +46,6 @@
 [submodule "bundle/Windows-PowerShell-Syntax-Pluginadd"]
 	path = bundle/Windows-PowerShell-Syntax-Pluginadd
 	url = https://github.com/vim-scripts/Windows-PowerShell-Syntax-Plugin.git
+[submodule "bundle/xmledit"]
+	path = bundle/xmledit
+	url = https://github.com/sukima/xmledit.git
