@@ -164,6 +164,9 @@ if has('gui_running')
   set lines=50
 endif
 
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
+
 " strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
