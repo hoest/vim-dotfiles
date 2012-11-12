@@ -49,3 +49,9 @@
 [submodule "bundle/xmledit"]
 	path = bundle/xmledit
 	url = https://github.com/sukima/xmledit.git
+[submodule "bundle/XSLT-Snippets"]
+	path = bundle/XSLT-Snippets
+	url = https://github.com/firegoby/XSLT-Snippets
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
