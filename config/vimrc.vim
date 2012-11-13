@@ -213,16 +213,13 @@ nnoremap j gj
 nnoremap k gk
 
 " move lines up and down
-nnoremap <A-j> :m+<CR>==
-nnoremap <A-k> :m-2<CR>==
-inoremap <A-j> <Esc>:m+<CR>==gi
-inoremap <A-k> <Esc>:m-2<CR>==gi
-vnoremap <A-j> :m'>+<CR>gv=gv
-vnoremap <A-k> :m-2<CR>gv=gv
+nnoremap <leader>j :m+<CR>==
+nnoremap <leader>k :m-2<CR>==
+vnoremap <leader>j :m'>+<CR>gv=gv
+vnoremap <leader>k :m-2<CR>gv=gv
 
 " duplicate current line
-nnoremap <A-d> :t.<CR>
-inoremap <A-d> <Esc>:t.<CR>i
+nnoremap <leader>d :t.<CR>
 
 " YankStack keys
 call yankstack#setup()
