@@ -1,8 +1,4 @@
-" Use vim settings, rather then vi settings (much better!)
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
-filetype plugin indent on
+filetype off
 
 " pathogen
 if has('win32') || has('win64')
@@ -10,6 +6,12 @@ if has('win32') || has('win64')
 else
   source $HOME/.vim/config/pathogen.vim
 endif
+
+filetype plugin indent on
+
+" Use vim settings, rather then vi settings (much better!)
+" This must be first, because it changes other options as a side effect.
+set nocompatible
 
 " disable mode lines (security measure)
 set nomodeline
@@ -53,6 +55,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set number
+" set relativenumber
 set shellslash
 
 " wildmode
@@ -102,7 +105,7 @@ else
 endif
 
 " change the <leader> key
-let mapleader = ","
+let mapleader=","
 let g:mapleader=","
 
 " search stuff
@@ -114,7 +117,7 @@ set showmatch
 set hlsearch
 
 " spell checking
-let g:spellfile_URL = ' http://ftp.vim.org/pub/vim/runtime/spell/'
+let g:spellfile_URL='http://ftp.vim.org/pub/vim/runtime/spell/'
 set spelllang=nl,en
 nmap <silent> <leader>s :set spell!<CR>
 
@@ -127,6 +130,8 @@ nnoremap <leader>fx :1,%s/>\s*</>\r</gg<CR>gg=G<CR>
 nnoremap <leader>ft Vatzf
 " fold from current
 nnoremap <leader>fc v%zf
+" re-hardwrap paragraph
+nnoremap <leader>q gqip
 
 " fix vim's horribly broken default regex-handling
 " See http://stevelosh.com/blog/2010/09/coming-home-to-vim
@@ -183,6 +188,9 @@ nnoremap <leader>v V`]
 nnoremap ; :
 nnoremap <leader>; ;
 
+" quick escape
+inoremap jj <ESC>
+
 " Avoid accidental hits of <F1> while aiming for <Esc>
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -218,7 +226,7 @@ inoremap <A-d> <Esc>:t.<CR>i
 
 " YankStack keys
 nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " Restore cursor position upon reopening files
 autocmd BufReadPost *
@@ -243,4 +251,19 @@ if has("win32") || has("win64")
   set shell=powershell
   set shellcmdflag=-command
 endif
+
+" scratchit
+command! ScratchToggle call ScratchToggle()
+
+function! ScratchToggle()
+    if exists("w:is_scratch_window")
+        unlet w:is_scratch_window
+        exec "q"
+    else
+        exec "normal! :Sscratch\<cr>\<C-W>L"
+        let w:is_scratch_window = 1
+    endif
+endfunction
+
+nnoremap <silent> <leader><tab> :ScratchToggle<cr>
 
