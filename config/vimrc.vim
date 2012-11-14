@@ -1,3 +1,7 @@
+" Use vim settings, rather then vi settings (much better!)
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
 filetype off
 
 " pathogen
@@ -8,10 +12,6 @@ else
 endif
 
 filetype plugin indent on
-
-" Use vim settings, rather then vi settings (much better!)
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " disable mode lines (security measure)
 set nomodeline
