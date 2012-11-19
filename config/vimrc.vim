@@ -67,6 +67,7 @@ set wildignore+=*.o,*.obj,*.exe,*.dll,*.pdb,*.db,*.manifest,*.suo,*.csproj.user,
 set wildignore+=*.spl
 set wildignore+=*.sw?
 set wildignore+=*.DS_Store
+set wildignore+=Thumbs.db
 set wildignore+=migrations
 set wildignore+=*.pyc
 
@@ -248,6 +249,8 @@ let g:flake8_ignore="E111,E501"
 if has("win32") || has("win64")
   set shell=powershell
   set shellcmdflag=-command
+else
+  set shell=zsh
 endif
 
 " scratchit
