@@ -46,9 +46,6 @@
 [submodule "bundle/Windows-PowerShell-Syntax-Pluginadd"]
 	path = bundle/Windows-PowerShell-Syntax-Pluginadd
 	url = https://github.com/vim-scripts/Windows-PowerShell-Syntax-Plugin.git
-[submodule "bundle/xmledit"]
-	path = bundle/xmledit
-	url = https://github.com/sukima/xmledit.git
 [submodule "bundle/XSLT-Snippets"]
 	path = bundle/XSLT-Snippets
 	url = https://github.com/firegoby/XSLT-Snippets
@@ -64,3 +61,6 @@
 [submodule "bundle/scratch"]
 	path = bundle/scratch
 	url = https://github.com/vim-scripts/scratch.vim.git
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = https://github.com/vim-scripts/matchit.zip
