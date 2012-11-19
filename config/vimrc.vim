@@ -58,6 +58,10 @@ set number
 " set relativenumber
 set shellslash
 
+" Autocompletion
+set ofu=syntaxcomplete#Complete
+set completeopt+=longest,menuone
+
 " wildmode
 set wildmenu
 set wildmode=list:longest,full
