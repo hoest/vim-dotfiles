@@ -252,7 +252,7 @@ let g:flake8_ignore="E111,E501"
 " powershell stuff for vim
 if has("win32") || has("win64")
   set shell=powershell
-  set shellcmdflag=-command
+  set shellcmdflag=-NoLogo\ -NoProfile\ -Command
 else
   set shell=zsh
 endif
