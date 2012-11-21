@@ -240,7 +240,7 @@ nnoremap <leader>d :t.<CR>
 call yankstack#setup()
 nnoremap <leader>y :Yanks<CR>
 
-if has("gui_macvim") || has("mac") || has("macunix")
+if exists(":macmeta")
   set macmeta
 endif
 
