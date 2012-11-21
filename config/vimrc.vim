@@ -145,6 +145,9 @@ nnoremap <leader>q gqip
 " Ack searching
 nnoremap <leader>a :Ack!<space>
 
+" Run a Powershell command
+nnoremap <leader>P :!powershell<space>-noprofile<space>-command<space>
+
 " fix vim's horribly broken default regex-handling
 " See http://stevelosh.com/blog/2010/09/coming-home-to-vim
 nnoremap / /\v
@@ -235,8 +238,11 @@ nnoremap <leader>d :t.<CR>
 
 " YankStack keys
 call yankstack#setup()
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
+nnoremap <leader>y :Yanks<CR>
+
+if has("gui_macvim") || has("mac") || has("macunix")
+  set macmeta
+endif
 
 " Restore cursor position upon reopening files
 autocmd BufReadPost *
