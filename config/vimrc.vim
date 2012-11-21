@@ -1,3 +1,7 @@
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Thanks http://stevelosh.com/ and http://nvie.com/ and many more .vimrc's! ;)
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 " Use vim settings, rather then vi settings (much better!)
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -138,6 +142,9 @@ nnoremap <leader>fc v%zf
 " re-hardwrap paragraph
 nnoremap <leader>q gqip
 
+" Ack searching
+nnoremap <leader>a :Ack!<space>
+
 " fix vim's horribly broken default regex-handling
 " See http://stevelosh.com/blog/2010/09/coming-home-to-vim
 nnoremap / /\v
@@ -250,12 +257,12 @@ au FileType vundle setlocal noshellslash
 let g:flake8_ignore="E111,E501"
 
 " powershell stuff for vim
-if has("win32") || has("win64")
-  set shell=powershell
-  set shellcmdflag=-NoLogo\ -NoProfile\ -Command
-else
-  set shell=zsh
-endif
+" if has("win32") || has("win64")
+"   set shell=powershell
+"   set shellcmdflag=-NoLogo\ -NoProfile\ -Command
+" else
+"   set shell=zsh
+" endif
 
 " scratchit
 command! ScratchToggle call ScratchToggle()
