@@ -184,9 +184,6 @@ endif
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
-" strip trailing whitespace
-nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
-
 " Use Q for formatting the current paragraph (or selection)
 nnoremap Q gqap
 vnoremap Q gq
@@ -273,4 +270,22 @@ function! ScratchToggle()
 endfunction
 
 nnoremap <silent> <leader><tab> :ScratchToggle<cr>
+
+" cleanup whitespace
+function! StripTrailingWhitespaces()
+    " save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+" strip trailing whitespace
+nnoremap <leader>W :call StripTrailingWhitespaces()<CR>
+" strip on save
+autocmd BufWritePre * :call StripTrailingWhitespaces()
 
