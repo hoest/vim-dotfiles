@@ -59,7 +59,6 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set number
-" set relativenumber
 set shellslash
 
 " Autocompletion
@@ -98,7 +97,6 @@ set listchars=tab:»·,trail:·
 set list
 set fillchars+=stl:\ ,stlnc:\
 set mouse=a
-" set foldmethod=indent
 set nofoldenable
 
 " always yank to system clipboard
@@ -146,7 +144,7 @@ nnoremap <leader>q gqip
 nnoremap <leader>a :Ack!<space>
 
 " Run a Powershell command
-nnoremap <leader>P :!powershell<space>-noprofile<space>-command<space>
+nnoremap <leader>P :!powershell<space>-command<space>
 
 " fix vim's horribly broken default regex-handling
 " See http://stevelosh.com/blog/2010/09/coming-home-to-vim
@@ -158,7 +156,6 @@ set wrap
 set formatoptions=qrn1
 set linebreak
 set colorcolumn=80,120
-" set textwidth=79
 
 " colorscheme
 syntax on
@@ -262,25 +259,17 @@ au FileType vundle setlocal noshellslash
 " flake8 settings
 let g:flake8_ignore="E111,E501"
 
-" powershell stuff for vim
-" if has("win32") || has("win64")
-"   set shell=powershell
-"   set shellcmdflag=-NoLogo\ -NoProfile\ -Command
-" else
-"   set shell=zsh
-" endif
-
 " scratchit
 command! ScratchToggle call ScratchToggle()
 
 function! ScratchToggle()
-    if exists("w:is_scratch_window")
-        unlet w:is_scratch_window
-        exec "q"
-    else
-        exec "normal! :Sscratch\<cr>\<C-W>L"
-        let w:is_scratch_window = 1
-    endif
+  if exists("w:is_scratch_window")
+    unlet w:is_scratch_window
+    exec "q"
+  else
+    exec "normal! :Sscratch\<cr>\<C-W>L"
+    let w:is_scratch_window = 1
+  endif
 endfunction
 
 nnoremap <silent> <leader><tab> :ScratchToggle<cr>
