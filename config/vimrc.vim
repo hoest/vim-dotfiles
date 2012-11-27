@@ -255,6 +255,9 @@ autocmd BufReadPost *
 " Big file => no syntax
 autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
 
+" Build files => XML
+autocmd BufNewFile,BufRead *.build set ft=xml
+
 " Powerline
 let g:Powerline_symbols = 'compatible'
 
