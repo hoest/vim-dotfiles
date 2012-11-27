@@ -97,7 +97,6 @@ set listchars=tab:»·,trail:·
 set list
 set fillchars+=stl:\ ,stlnc:\
 set mouse=a
-set nofoldenable
 
 " always yank to system clipboard
 set clipboard=unnamed
@@ -133,10 +132,19 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " fix dirty xml/xhtml
 nnoremap <leader>fx :1,%s/>\s*</>\r</gg<CR>gg=G<CR>
+
+set foldlevelstart=99
+set foldmethod=indent
+
+" Space to toggle folds.
+nnoremap <Space> za
+vnoremap <Space> za
+
 " fold tag
 nnoremap <leader>ft Vatzf
 " fold from current
 nnoremap <leader>fc v%zf
+
 " re-hardwrap paragraph
 nnoremap <leader>q gqip
 
