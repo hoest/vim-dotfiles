@@ -199,12 +199,6 @@ vnoremap Q gq
 " reselect text that was just pasted
 nnoremap <leader>v V`]
 
-" Since I never use the ; key anyway, this is a real optimization for almost
-" all Vim commands, as I don't have to press the Shift key to form chords to
-" enter ex mode.
-nnoremap ; :
-nnoremap <leader>; ;
-
 " quick escape
 inoremap jj <ESC>
 
@@ -242,7 +236,7 @@ nnoremap <leader>d :t.<CR>
 call yankstack#setup()
 nnoremap <leader>y :Yanks<CR>
 
-if exists(":macmeta")
+if has("gui_macvim")
   set macmeta
 endif
 
