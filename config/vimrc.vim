@@ -196,8 +196,8 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap Q gqap
 vnoremap Q gq
 
-" reselect text that was just pasted
-nnoremap <leader>v V`]
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
 
 " quick escape
 inoremap jj <ESC>
@@ -223,11 +223,12 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
-" move lines up and down
-nnoremap <leader>j :m+<CR>==
-nnoremap <leader>k :m-2<CR>==
-vnoremap <leader>j :m'>+<CR>gv=gv
-vnoremap <leader>k :m-2<CR>gv=gv
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
 
 " duplicate current line
 nnoremap <leader>d :t.<CR>
