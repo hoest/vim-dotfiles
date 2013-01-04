@@ -23,3 +23,9 @@ All
   git submodule update
   ```
 You need to have Ack (Perl) and Python (Flake8) installed.
+
+Update all submodules:
+  ```
+  git submodule foreach git pull origin master
+  ```
+

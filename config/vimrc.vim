@@ -259,7 +259,7 @@ let g:Powerline_symbols = 'compatible'
 au FileType vundle setlocal noshellslash
 
 " flake8 settings
-let g:flake8_ignore="E111,E501,W391"
+let g:flake8_ignore="E111,E501,W391,E121"
 
 " scratchit
 command! ScratchToggle call ScratchToggle()
