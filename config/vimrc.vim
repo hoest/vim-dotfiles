@@ -199,6 +199,9 @@ vnoremap Q gq
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
 
+" Retab
+nmap <leader>T :retab!<CR>
+
 " quick escape
 inoremap jj <ESC>
 
