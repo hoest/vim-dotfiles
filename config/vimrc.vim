@@ -22,8 +22,8 @@ set nomodeline
 
 " tab settings
 set tabstop=2
-set shiftwidth=2
 set softtabstop=2
+set shiftwidth=2
 set expandtab
 set nosmarttab
 
@@ -60,6 +60,7 @@ set backspace=indent,eol,start
 set laststatus=2
 set number
 set shellslash
+set nojoinspaces
 
 " Autocompletion
 set ofu=syntaxcomplete#Complete
@@ -96,7 +97,10 @@ set autochdir
 set listchars=tab:»·,trail:·
 set list
 set fillchars+=stl:\ ,stlnc:\
-set mouse=a
+
+if has('mouse')
+  set mouse=nv " don't use mouse in insert mode
+endif
 
 " always yank to system clipboard
 set clipboard=unnamed
@@ -191,7 +195,7 @@ if has('gui_running')
 endif
 
 " Gundo
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
 
 " Use Q for formatting the current paragraph (or selection)
 nnoremap Q gqap
