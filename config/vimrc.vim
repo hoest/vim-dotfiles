@@ -103,6 +103,7 @@ set clipboard=unnamed
 
 " no backup or swap files
 set nobackup
+set nowritebackup
 set noswapfile
 if has('win32') || has('win64')
   set directory=$HOME/vimfiles/tmp
