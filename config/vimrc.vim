@@ -215,10 +215,6 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" Jump to matching pairs easily, with Tab
-nnoremap <Tab> %
-vnoremap <Tab> %
-
 " use the hjkl keys the right way!
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -287,7 +283,7 @@ function! ScratchToggle()
   endif
 endfunction
 
-nnoremap <silent> <leader><tab> :ScratchToggle<cr>
+nnoremap <silent> <leader><Tab> :ScratchToggle<CR>
 
 " cleanup whitespace
 function! StripTrailingWhitespaces()
