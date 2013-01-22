@@ -82,15 +82,18 @@ set wildignore+=*.pyc
 " auto read when file is changed from outside
 set autoread
 
-set undofile
-if has('win32') || has('win64')
-  set undodir=$HOME/vimfiles/undo
-else
-  set undodir=$HOME/.vim/undo
+if version >= 703
+  set undofile
+  if has('win32') || has('win64')
+    set undodir=$HOME/vimfiles/undo
+  else
+    set undodir=$HOME/.vim/undo
+  endif
+
+  set undolevels=1000
+  set undoreload=10000
 endif
 
-set undolevels=1000
-set undoreload=10000
 set lazyredraw
 set history=1000
 set autochdir
