@@ -171,7 +171,10 @@ vnoremap / /\v
 set wrap
 set formatoptions=qrn1
 set linebreak
-set colorcolumn=80,120
+
+if version >= 703
+  set colorcolumn=80,120
+endif
 
 " colorscheme
 syntax on
