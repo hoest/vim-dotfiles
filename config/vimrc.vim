@@ -200,6 +200,9 @@ if has('gui_running')
   set lines=50
 endif
 
+" Numbers
+nnoremap <leader>n :NumbersToggle<CR>
+
 " Gundo
 nnoremap <leader>u :GundoToggle<CR>
 
