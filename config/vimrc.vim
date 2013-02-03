@@ -315,3 +315,6 @@ autocmd BufWritePre * :call StripTrailingWhitespaces()
 " Flake8 when write python file
 autocmd BufWritePost *.py call Flake8()
 
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
