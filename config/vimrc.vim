@@ -320,10 +320,3 @@ autocmd BufWritePre * :call StripTrailingWhitespaces()
 " Flake8 when write python file
 autocmd BufWritePost *.py call Flake8()
 
-" Delete empty buffers, specially for files opened with --remote option
-autocmd BufAdd * :call <SID>DeleteBufferIfEmpty()
-function s:DeleteBufferIfEmpty()
-  if bufname('%') == ''
-    set bufhidden=wipe
-  endif
-endfunction
