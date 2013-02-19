@@ -143,6 +143,8 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " fix dirty xml/xhtml
 nnoremap <leader>fx :1,%s/>\s*</>\r</gg<CR>gg=G<CR>
+" close a tag in XML
+inoremap <M-.> </<C-X><C-O>
 
 set foldlevelstart=99
 set foldmethod=indent
@@ -164,11 +166,6 @@ nnoremap <leader>a :Ack!<space>
 
 " Run a Powershell command
 nnoremap <leader>P :!powershell<space>-command<space>
-
-" fix vim's horribly broken default regex-handling
-" See http://stevelosh.com/blog/2010/09/coming-home-to-vim
-nnoremap / /\v
-vnoremap / /\v
 
 " long lines
 set wrap
@@ -218,9 +215,6 @@ nmap gV `[v`]
 
 " Retab
 nmap <leader>T :retab!<CR>
-
-" quick escape
-inoremap jj <ESC>
 
 " Avoid accidental hits of <F1> while aiming for <Esc>
 inoremap <F1> <ESC>
