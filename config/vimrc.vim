@@ -66,6 +66,9 @@ set nojoinspaces
 set ofu=syntaxcomplete#Complete
 set completeopt+=longest,menuone
 
+" Supertab
+let g:SuperTabDefaultCompletionType = "context"
+
 " wildmode
 set wildmenu
 set wildmode=list:longest,full
