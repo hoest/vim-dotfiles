@@ -73,6 +73,12 @@ snippet apply "Apply templates" b
 </xsl:apply-templates>${7}
 endsnippet
 
+snippet call "Call template" b
+<xsl:call-template name="${1:QName}">
+	${2:<xsl:with-param name="${3:QName}" select="${4:Expr}"/>}
+</xsl:call-template>${5}
+endsnippet
+
 snippet if "If" b
 <xsl:if test="${1:Expr}">
 	${2}
@@ -85,4 +91,8 @@ endsnippet
 
 snippet import "Import" b
 <xsl:import href="${1:uri}"/>${2}
+endsnippet
+
+snippet sort "Sort" b
+<xsl:sort select="${1:Expr}" data-type="${2:text|number}" order="${3:ascending|descending}" case-order="${4:upper-first|lower-first}" />
 endsnippet
