@@ -1,0 +1,48 @@
+snippet value "Value-of" b
+<xsl:value-of select="${1:Expr}" ${2:disable-output-escaping="${3:yes|no}"}/>${4}
+endsnippet
+
+snippet for "Foreach" b
+<xsl:for-each select="${1:Expr}">
+	${2}
+</xsl:for-each>${3}
+endsnippet
+
+snippet choose "Choose/When" b
+<xsl:choose>
+	<xsl:when test="${1:Expr}">
+		${2}
+	</xsl:when>
+	${3:<xsl:otherwise>
+			${4}
+		</xsl:otherwise>}
+</xsl:choose>${5}
+endsnippet
+
+snippet attr "Attribute" b
+<xsl:attribute name="${1:QName}"${2: namespace="uri"}>${3}</xsl:attribute>${4}
+endsnippet
+
+snippet text "Text" b
+<xsl:text${1: disable-output-escaping="${2:yes|no}"}>${3}</xsl:text>${4}
+endsnippet
+
+snippet var "Variable" b
+<xsl:variable name="${1:QName}" select="${2:Expr}"/>${3}
+endsnippet
+
+snippet var "Variable..." b
+<xsl:variable name="${1:QName}">
+	${2}
+</xsl:variable>${3}
+endsnippet
+
+snippet var "Parameter" b
+<xsl:param name="${1:QName}" select="${2:Expr}"/>${3}
+endsnippet
+
+snippet var "Parameter..." b
+<xsl:param name="${1:QName}">
+	${2}
+</xsl:param>${3}
+endsnippet

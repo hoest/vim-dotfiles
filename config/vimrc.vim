@@ -69,6 +69,14 @@ set completeopt+=longest,menuone
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
 
+" UltiSnip
+if has('win32') || has('win64')
+  set rtp+=~/vimfiles/snippets/
+else
+  set rtp+=~/.vim/snippets/
+endif
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+
 " wildmode
 set wildmenu
 set wildmode=list:longest,full
