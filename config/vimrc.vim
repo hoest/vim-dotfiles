@@ -278,9 +278,6 @@ let g:Powerline_symbols = 'compatible'
 " Vundle fix for 'set shellslash'
 au FileType vundle setlocal noshellslash
 
-" flake8 settings
-let g:flake8_ignore="E111,E501,W391,E121"
-
 " scratchit
 command! ScratchToggle call ScratchToggle()
 
@@ -313,6 +310,9 @@ endfunction
 nnoremap <leader>W :call StripTrailingWhitespaces()<CR>
 " strip on save
 autocmd BufWritePre * :call StripTrailingWhitespaces()
+
+" flake8 settings
+let g:flake8_ignore="E111,E501,W391,E121"
 
 " Flake8 when write python file
 autocmd BufWritePost *.py call Flake8()
