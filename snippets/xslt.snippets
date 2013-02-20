@@ -19,6 +19,12 @@ snippet choose "Choose/When" b
 </xsl:choose>${5}
 endsnippet
 
+snippet when "When" b
+<xsl:when test="${1:Expr}">
+	${2}
+</xsl:when>
+endsnippet
+
 snippet attr "Attribute" b
 <xsl:attribute name="${1:QName}"${2: namespace="uri"}>${3}</xsl:attribute>${4}
 endsnippet
@@ -45,4 +51,38 @@ snippet var "Parameter..." b
 <xsl:param name="${1:QName}">
 	${2}
 </xsl:param>${3}
+endsnippet
+
+snippet temp "Template match" b
+<xsl:template match="${1:Expr}"${2: mode="${3:QName}"}>
+	${4:<xsl:param name="${5:QName}" select="${6:Expr}"/>}
+	${7}
+</xsl:template>${8}
+endsnippet
+
+snippet temp "Template name" b
+<xsl:template name="${1:Expr}"${2: mode="${3:QName}"}>
+	${4:<xsl:param name="${5:QName}" select="${6:Expr}"/>}
+	${7}
+</xsl:template>${8}
+endsnippet
+
+snippet apply "Apply templates" b
+<xsl:apply-templates select="${1:Expr}"${2: mode="${3:QName}"}>
+	${4:<xsl:with-param name="${5:QName}" select="${6:Expr}"/>}
+</xsl:apply-templates>${7}
+endsnippet
+
+snippet if "If" b
+<xsl:if test="${1:Expr}">
+	${2}
+</xsl:if>${3}
+endsnippet
+
+snippet include "Include" b
+<xsl:include href="${1:uri}"/>${2}
+endsnippet
+
+snippet import "Import" b
+<xsl:import href="${1:uri}"/>${2}
 endsnippet
