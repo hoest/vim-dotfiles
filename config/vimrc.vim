@@ -325,3 +325,8 @@ let g:flake8_ignore="E111,E501,W391,E121"
 " Flake8 when write python file
 autocmd BufWritePost *.py call Flake8()
 
+" Indenting fix for HTML, XML and XSLT
+autocmd FileType html setlocal indentkeys-=*<Return>
+autocmd FileType xml setlocal indentkeys-=*<Return>
+autocmd FileType xslt setlocal indentkeys-=*<Return>
+
