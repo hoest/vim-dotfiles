@@ -178,6 +178,9 @@ nnoremap <leader>P :!powershell<space>-command<space>
 " Consistent with D and C
 nnoremap Y y$
 
+" Special gf extension
+nnoremap <leader>gf :e <cfile><CR>
+
 " long lines
 set wrap
 set formatoptions=qrn1
