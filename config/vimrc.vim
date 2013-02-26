@@ -175,6 +175,9 @@ nnoremap <leader>a :Ack!<space>
 " Run a Powershell command
 nnoremap <leader>P :!powershell<space>-command<space>
 
+" Consistent with D and C
+nnoremap Y y$
+
 " long lines
 set wrap
 set formatoptions=qrn1
