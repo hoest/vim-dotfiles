@@ -94,5 +94,39 @@ snippet import "Import" b
 endsnippet
 
 snippet sort "Sort" b
-<xsl:sort select="${1:Expr}" data-type="${2:text|number}" order="${3:ascending|descending}" case-order="${4:upper-first|lower-first}" />
+<xsl:sort select="${1:Expr}" data-type="${2:text|number}" order="${3:ascending|descending}" case-order="${4:upper-first|lower-first}" />${5}
+endsnippet
+
+snippet style "XSL Bootstrap" b
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	${1}
+</xsl:stylesheet>
+endsnippet
+
+snippet style "XSL Bootstrap for XHTML" b
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"
+								xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+								xmlns="http://www.w3.org/1999/xhtml">
+	${1}
+</xsl:stylesheet>
+endsnippet
+
+snippet key "Key" b
+<xsl:key name="${1:QName}" match="${2:Pattern}" use="${3:Expr}"/>${4}
+endsnippet
+
+snippet cdata "CDATA" b
+<![CDATA[${1}]]>${2}
+endsnippet
+
+snippet copy "Copy" b
+<xsl:copy-of select="${1:Expr}"/>${2}
+endsnippet
+
+snippet element "Element" b
+<xsl:element name="${1:QName}"${2: namespace="${3:uri}"}>
+	${4}
+</xsl:element>${5}
 endsnippet
