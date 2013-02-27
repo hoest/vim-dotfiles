@@ -240,14 +240,6 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-nnoremap <PageUp> <nop>
-nnoremap <PageDown> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-inoremap <PageUp> <nop>
-inoremap <PageDown> <nop>
 
 nnoremap j gj
 nnoremap k gk
