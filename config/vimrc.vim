@@ -47,6 +47,10 @@ set scrolloff=3
 set autoindent
 set smartindent
 set copyindent
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+
 set showmode
 set showcmd
 set hidden
