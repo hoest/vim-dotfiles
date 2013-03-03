@@ -179,6 +179,16 @@ nnoremap <leader>a :Ack!<space>
 " Run a Powershell command
 nnoremap <leader>P :!powershell<space>-command<space>
 
+" YankStack keys
+call yankstack#setup()
+noremap <leader>y :Yanks<CR>
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+if has("gui_macvim")
+  set macmeta
+endif
+
 " Consistent with D and C
 nnoremap Y y$
 
@@ -261,14 +271,6 @@ vmap <C-j> ]egv
 
 " duplicate current line
 nnoremap <leader>d :t.<CR>
-
-" YankStack keys
-call yankstack#setup()
-nnoremap <leader>y :Yanks<CR>
-
-if has("gui_macvim")
-  set macmeta
-endif
 
 " Restore cursor position upon reopening files
 autocmd BufReadPost *
