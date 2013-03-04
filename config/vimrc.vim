@@ -47,10 +47,6 @@ set scrolloff=3
 set autoindent
 set smartindent
 set copyindent
-
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
-
 set showmode
 set showcmd
 set hidden
@@ -177,7 +173,7 @@ nnoremap <leader>q gqip
 nnoremap <leader>a :Ack!<space>
 
 " Run a Powershell command
-nnoremap <leader>P :!powershell<space>-command<space>
+nnoremap <leader>S :!powershell<space>-command<space>
 
 " YankStack keys
 call yankstack#setup()
@@ -188,6 +184,9 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 if has("gui_macvim")
   set macmeta
 endif
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
 
 " Consistent with D and C
 nnoremap Y y$
