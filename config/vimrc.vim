@@ -175,12 +175,6 @@ nnoremap <leader>a :Ack!<space>
 " Run a Powershell command
 nnoremap <leader>S :!powershell<space>-command<space>
 
-" YankStack keys
-call yankstack#setup()
-noremap <leader>y :Yanks<CR>
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
-
 if has("gui_macvim")
   set macmeta
 endif
