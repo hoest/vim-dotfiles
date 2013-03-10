@@ -67,3 +67,6 @@
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "bundle/dwm.vim"]
+	path = bundle/dwm.vim
+	url = https://github.com/spolu/dwm.vim
