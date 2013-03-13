@@ -327,3 +327,10 @@ autocmd FileType html setlocal indentkeys-=*<Return>
 autocmd FileType xml setlocal indentkeys-=*<Return>
 autocmd FileType xslt setlocal indentkeys-=*<Return>
 
+augroup sourcesession
+  autocmd!
+  if argc() == 0 && filereadable('Session.vim')
+    autocmd VimEnter * nested :source Session.vim
+  endif
+augroup END
+
