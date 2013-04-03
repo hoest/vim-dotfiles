@@ -200,15 +200,15 @@ endif
 " colorscheme
 syntax on
 if has('gui_running')
-  set background=light
+  " set background=light
 else
   let g:solarized_termcolors=256
   let g:solarized_termtrans=1
   set t_Co=256
-  set background=dark
 endif
 
 colorscheme solarized
+set background=dark
 
 " font and window size
 if has('gui_running')
