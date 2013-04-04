@@ -65,6 +65,7 @@ set nojoinspaces
 " Autocompletion
 set ofu=syntaxcomplete#Complete
 set completeopt+=longest,menuone
+set complete+=k
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
@@ -119,10 +120,11 @@ endif
 " always yank to system clipboard
 set clipboard=unnamed
 
-" no backup or swap files
+" no backup
 set nobackup
 set nowritebackup
-set noswapfile
+
+set swapfile
 if has('win32') || has('win64')
   set directory=$HOME/vimfiles/tmp
 else
@@ -130,8 +132,9 @@ else
 endif
 
 " change the <leader> key
-let mapleader=","
-let g:mapleader=","
+" let mapleader=","
+" let g:mapleader=","
+" noremap \ ,
 
 " search stuff
 set ignorecase
@@ -198,6 +201,8 @@ if version >= 703
 endif
 
 " colorscheme
+call togglebg#map("<leader>b")
+
 syntax on
 if has('gui_running')
   " set background=light
@@ -283,21 +288,6 @@ let g:Powerline_symbols = 'compatible'
 " Vundle fix for 'set shellslash'
 au FileType vundle setlocal noshellslash
 
-" scratchit
-command! ScratchToggle call ScratchToggle()
-
-function! ScratchToggle()
-  if exists("w:is_scratch_window")
-    unlet w:is_scratch_window
-    exec "q"
-  else
-    exec "normal! :Sscratch\<cr>\<C-W>L"
-    let w:is_scratch_window = 1
-  endif
-endfunction
-
-nnoremap <silent> <leader><Tab> :ScratchToggle<CR>
-
 " cleanup whitespace
 function! StripTrailingWhitespaces()
   " save last search, and cursor position.
@@ -321,16 +311,4 @@ let g:flake8_ignore="E111,E501,W391,E121"
 
 " Flake8 when write python file
 autocmd BufWritePost *.py call Flake8()
-
-" Indenting fix for HTML, XML and XSLT
-autocmd FileType html setlocal indentkeys-=*<Return>
-autocmd FileType xml setlocal indentkeys-=*<Return>
-autocmd FileType xslt setlocal indentkeys-=*<Return>
-
-augroup sourcesession
-  autocmd!
-  if argc() == 0 && filereadable('Session.vim')
-    autocmd VimEnter * nested :source Session.vim
-  endif
-augroup END
 
