@@ -267,6 +267,12 @@ vmap <C-k> [egv
 vmap <C-Down> ]egv
 vmap <C-j> ]egv
 
+" Indent lines with cmd+[ and cmd+]
+nmap <D-]> >>
+nmap <D-[> <<
+vmap <D-[> <gv
+vmap <D-]> >gv
+
 " duplicate current line
 nnoremap <leader>d :t.<CR>
 
