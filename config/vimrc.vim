@@ -9,11 +9,7 @@ set nocompatible
 filetype off
 
 " pathogen
-if has('win32') || has('win64')
-  source $HOME/vimfiles/config/pathogen.vim
-else
-  source $HOME/.vim/config/pathogen.vim
-endif
+execute pathogen#infect()
 
 filetype plugin indent on
 
