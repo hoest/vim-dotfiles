@@ -171,6 +171,11 @@ nnoremap <leader>q gqip
 " Ack searching
 nnoremap <leader>a :Ack!<space>
 
+" OSX use 'the_silver_searcher'/'ag'
+if has("gui_macvim") || has("mac") || has("macunix")
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
+
 " Run a Powershell command
 nnoremap <leader>S :!powershell<space>-command<space>
 
