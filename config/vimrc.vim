@@ -77,15 +77,27 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 " wildmode
 set wildmenu
 set wildmode=list:longest,full
-set wildignore+=.git,.svn
+set wildignore+=*.DS_Store
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.pdb,*.db,*.manifest,*.suo,*.csproj.user,*.cache
+set wildignore+=*.pyc
+set wildignore+=*.so,
 set wildignore+=*.spl
 set wildignore+=*.sw?
-set wildignore+=*.DS_Store
+set wildignore+=*.zip
+set wildignore+=*/build/*
+set wildignore+=*/com/*
+set wildignore+=*/config/*
+set wildignore+=*/db/*
+set wildignore+=*/deploy/*
+set wildignore+=*/dist/*
+set wildignore+=*/tmp/*
+set wildignore+=*/tools/*
+set wildignore+=.git,.svn
 set wildignore+=Thumbs.db
-set wildignore+=migrations
-set wildignore+=*.pyc
+
+" Add .ctrlp file as root marker
+let g:ctrlp_root_markers=['.ctrlp']
 
 " auto read when file is changed from outside
 set autoread
