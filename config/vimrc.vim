@@ -24,7 +24,7 @@ set expandtab
 set nosmarttab
 
 " menu and scrollbar shizzle
-if has('gui_running')
+if has("gui_running")
   set guioptions-=T
   set guioptions-=m
   set guioptions-=l
@@ -67,7 +67,7 @@ set complete+=k
 let g:SuperTabDefaultCompletionType = "context"
 
 " UltiSnip
-if has('win32') || has('win64')
+if has("win32") || has("win64")
   set rtp+=~/vimfiles/snippets/
 else
   set rtp+=~/.vim/snippets/
@@ -81,25 +81,27 @@ set wildignore+=*.DS_Store
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.pdb,*.db,*.manifest,*.suo,*.csproj.user,*.cache
 set wildignore+=*.pyc
-set wildignore+=*.so,
-set wildignore+=*.spl
 set wildignore+=*.sw?
 set wildignore+=*.zip
 set wildignore+=*/tmp/*
-set wildignore+=.git,.svn
+set wildignore+=.svn
 set wildignore+=Thumbs.db
 
-let g:ctrlp_custom_ignore={'dir': '\v[\/](\.git|build|com|db|deploy|dist|tmp|tools)$','file': ''}
+" Add ctrlp ignore filter
+let g:ctrlp_custom_ignore={
+      \"dir": "\v[\/](\build|com|db|deploy|dist|tmp|tools)$",
+      \"file": "\.(exe|obj|dll|pdb|suo|cache|pyc|swp|so|db)$"
+      \}
 
 " Add .ctrlp file as root marker
-let g:ctrlp_root_markers=['.ctrlp']
+let g:ctrlp_root_markers=[".ctrlp"]
 
 " auto read when file is changed from outside
 set autoread
 
 if version >= 703
   set undofile
-  if has('win32') || has('win64')
+  if has("win32") || has("win64")
     set undodir=$HOME/vimfiles/undo
   else
     set undodir=$HOME/.vim/undo
@@ -116,7 +118,7 @@ set listchars=tab:»·,trail:·
 set list
 set fillchars+=stl:\ ,stlnc:\
 
-if has('mouse')
+if has("mouse")
   set mouse=nv " don't use mouse in insert mode
 endif
 
@@ -128,7 +130,7 @@ set nobackup
 set nowritebackup
 
 set swapfile
-if has('win32') || has('win64')
+if has("win32") || has("win64")
   set directory=$HOME/vimfiles/tmp
 else
   set directory=$HOME/.vim/tmp
@@ -148,7 +150,7 @@ set showmatch
 set hlsearch
 
 " spell checking
-let g:spellfile_URL='http://ftp.vim.org/pub/vim/runtime/spell/'
+let g:spellfile_URL="http://ftp.vim.org/pub/vim/runtime/spell/"
 set spelllang=nl,en
 nmap <silent> <leader>s :set spell!<CR>
 
@@ -180,7 +182,7 @@ nnoremap <leader>a :Ack!<space>
 
 " OSX use 'the_silver_searcher'/'ag'
 if has("gui_macvim") || has("mac") || has("macunix")
-  let g:ackprg = 'ag --nogroup --nocolor --column'
+  let g:ackprg = "ag --nogroup --nocolor --column"
 endif
 
 " Run a Powershell command
@@ -212,7 +214,7 @@ endif
 call togglebg#map("<leader>b")
 
 syntax on
-if has('gui_running')
+if has("gui_running")
   set background=dark " was: light
 else
   let g:solarized_termcolors=256
@@ -224,7 +226,7 @@ endif
 colorscheme solarized
 
 " font and window size
-if has('gui_running')
+if has("gui_running")
   if has("win32") || has("win64")
     set guifont=Consolas:h10
   elseif has("gui_macvim") || has("mac") || has("macunix")
@@ -292,7 +294,7 @@ autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | end
 autocmd BufNewFile,BufRead *.build set ft=xml
 
 " Powerline
-let g:Powerline_symbols = 'compatible'
+let g:Powerline_symbols = "compatible"
 
 " Vundle fix for 'set shellslash'
 au FileType vundle setlocal noshellslash
