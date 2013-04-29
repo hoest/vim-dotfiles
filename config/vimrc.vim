@@ -85,16 +85,11 @@ set wildignore+=*.so,
 set wildignore+=*.spl
 set wildignore+=*.sw?
 set wildignore+=*.zip
-set wildignore+=*/build/*
-set wildignore+=*/com/*
-set wildignore+=*/config/*
-set wildignore+=*/db/*
-set wildignore+=*/deploy/*
-set wildignore+=*/dist/*
 set wildignore+=*/tmp/*
-set wildignore+=*/tools/*
 set wildignore+=.git,.svn
 set wildignore+=Thumbs.db
+
+let g:ctrlp_custom_ignore={'dir': '\v[\/](\.git|build|com|db|deploy|dist|tmp|tools)$','file': ''}
 
 " Add .ctrlp file as root marker
 let g:ctrlp_root_markers=['.ctrlp']
