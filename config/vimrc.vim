@@ -89,8 +89,8 @@ set wildignore+=Thumbs.db
 
 " Add ctrlp ignore filter
 let g:ctrlp_custom_ignore={
-      \"dir": "\v[\/](\build|com|db|deploy|dist|tmp|tools)$",
-      \"file": "\.(exe|obj|dll|pdb|suo|cache|pyc|swp|so|db)$"
+      \'dir': '\v[\/](build|com|db|deploy|dist|tmp|tools)$',
+      \'file': '\v\.(exe|obj|dll|pdb|suo|cache|pyc|swp|so|db)$'
       \}
 
 " Add .ctrlp file as root marker
