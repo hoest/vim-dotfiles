@@ -93,8 +93,14 @@ let g:ctrlp_custom_ignore={
       \'file': '\v\.(exe|obj|dll|pdb|suo|cache|pyc|swp|so|db)$'
       \}
 
+" Keep cache
+let g:ctrlp_clear_cache_on_exit = 0
+
 " Add .ctrlp file as root marker
 let g:ctrlp_root_markers=[".ctrlp"]
+
+" setup tags file
+set tags+=tags;$HOME,.tags;$HOME,tags;/.tags;/
 
 " auto read when file is changed from outside
 set autoread
