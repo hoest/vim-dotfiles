@@ -221,7 +221,7 @@ call togglebg#map("<leader>b")
 
 syntax on
 if has("gui_running")
-  set background=dark " was: light
+  set background=light
 else
   let g:solarized_termcolors=256
   let g:solarized_termtrans=1
