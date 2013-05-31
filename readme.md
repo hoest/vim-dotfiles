@@ -29,3 +29,5 @@ Update all submodules:
   git submodule foreach git pull origin master
   ```
 
+Install the recommended Powerline-patched fonts.
+
