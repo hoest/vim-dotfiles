@@ -234,7 +234,7 @@ colorscheme solarized
 " font and window size
 if has("gui_running")
   if has("win32") || has("win64")
-    set guifont=Consolas:h10
+    set guifont=Consolas\ for\ Powerline\ FixedD:h10
   elseif has("gui_macvim") || has("mac") || has("macunix")
     set guifont=Menlo:h12
   endif
@@ -300,7 +300,7 @@ autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | end
 autocmd BufNewFile,BufRead *.build set ft=xml
 
 " Powerline
-let g:Powerline_symbols = "compatible"
+let g:Powerline_symbols = "fancy"
 
 " Vundle fix for 'set shellslash'
 au FileType vundle setlocal noshellslash
