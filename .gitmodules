@@ -64,3 +64,6 @@
 [submodule "fonts/consolas-powerline-vim"]
 	path = fonts/consolas-powerline-vim
 	url = https://github.com/eugeneching/consolas-powerline-vim.git
+[submodule "bundle/vim-multiple-cursors"]
+	path = bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
