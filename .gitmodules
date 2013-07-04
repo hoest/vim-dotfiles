@@ -64,3 +64,6 @@
 [submodule "fonts/consolas-powerline-vim"]
 	path = fonts/consolas-powerline-vim
 	url = https://github.com/eugeneching/consolas-powerline-vim.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
