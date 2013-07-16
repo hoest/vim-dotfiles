@@ -61,3 +61,6 @@
 [submodule "fonts/consolas-powerline-vim"]
 	path = fonts/consolas-powerline-vim
 	url = https://github.com/eugeneching/consolas-powerline-vim.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git

@@ -234,9 +234,9 @@ colorscheme solarized
 " font and window size
 if has("gui_running")
   if has("win32") || has("win64")
-    set guifont=Consolas\ for\ Powerline\ FixedD:h10
+    set guifont=Consolas:h10
   elseif has("gui_macvim") || has("mac") || has("macunix")
-    set guifont=Menlo\ for\ Powerline:h12
+    set guifont=Menlo:h12
   endif
   set columns=120
   set lines=50
@@ -299,9 +299,6 @@ autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | end
 " Build files => XML
 autocmd BufNewFile,BufRead *.build set ft=xml
 
-" Powerline
-let g:Powerline_symbols = "fancy"
-
 " Vundle fix for 'set shellslash'
 au FileType vundle setlocal noshellslash
 
@@ -332,3 +329,10 @@ autocmd BufWritePost *.py call Flake8()
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+" Airline
+let g:airline_enable_syntastic=0
+let g:airline_theme='dark'
+
+" Bufferline
+let g:bufferline_echo=0
