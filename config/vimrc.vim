@@ -331,6 +331,7 @@ set splitbelow
 set splitright
 
 " Airline
+" let g:airline_powerline_fonts=1
 let g:airline_enable_syntastic=0
 let g:airline_theme='dark'
 
