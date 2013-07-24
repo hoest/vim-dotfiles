@@ -58,12 +58,12 @@
 [submodule "bundle/vim-bufferline"]
 	path = bundle/vim-bufferline
 	url = https://github.com/bling/vim-bufferline.git
-[submodule "fonts/consolas-powerline-vim"]
-	path = fonts/consolas-powerline-vim
-	url = https://github.com/eugeneching/consolas-powerline-vim.git
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion/
+[submodule "fonts/consolas"]
+	path = fonts/consolas
+	url = https://github.com/nicolalamacchia/powerline-consolas.git
