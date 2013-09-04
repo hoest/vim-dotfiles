@@ -55,9 +55,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "bundle/vim-bufferline"]
-	path = bundle/vim-bufferline
-	url = https://github.com/bling/vim-bufferline.git
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
