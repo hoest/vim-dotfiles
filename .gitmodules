@@ -64,3 +64,6 @@
 [submodule "fonts/consolas"]
 	path = fonts/consolas
 	url = https://github.com/nicolalamacchia/powerline-consolas.git
+[submodule "bundle/vim-sensible"]
+	path = bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git

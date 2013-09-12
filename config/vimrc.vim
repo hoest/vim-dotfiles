@@ -11,7 +11,8 @@ filetype off
 " pathogen
 execute pathogen#infect()
 
-filetype plugin indent on
+" run vim-sensible
+runtime! plugin/sensible.vim
 
 " disable mode lines (security measure)
 set nomodeline
@@ -21,7 +22,6 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-set nosmarttab
 
 " menu and scrollbar shizzle
 if has("gui_running")
@@ -35,33 +35,18 @@ if has("gui_running")
 endif
 
 " just make things better
-scriptencoding utf-8
-set encoding=utf-8
-set termencoding=utf-8
-set fileencoding=utf-8
-set scrolloff=3
-set autoindent
 set smartindent
 set copyindent
 set showmode
-set showcmd
 set hidden
 set visualbell
 set noerrorbells
 set title
 set cursorline
 set ttyfast
-set ruler
-set backspace=indent,eol,start
-set laststatus=2
 set number
 set shellslash
 set nojoinspaces
-
-" Autocompletion
-set ofu=syntaxcomplete#Complete
-set completeopt+=longest,menuone
-set complete+=k
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
@@ -73,19 +58,6 @@ else
   set rtp+=~/.vim/snippets/
 endif
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
-
-" wildmode
-set wildmenu
-set wildmode=list:longest,full
-set wildignore+=*.DS_Store
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.pdb,*.db,*.manifest,*.suo,*.csproj.user,*.cache
-set wildignore+=*.pyc
-set wildignore+=*.sw?
-set wildignore+=*.zip
-set wildignore+=*/tmp/*
-set wildignore+=.svn
-set wildignore+=Thumbs.db
 
 " Add ctrlp ignore filter
 let g:ctrlp_custom_ignore={
@@ -102,9 +74,6 @@ let g:ctrlp_root_markers=[".ctrlp"]
 " setup tags file
 set tags+=tags;$HOME,.tags;$HOME,tags;/.tags;/
 
-" auto read when file is changed from outside
-set autoread
-
 if version >= 703
   set undofile
   if has("win32") || has("win64")
@@ -118,7 +87,6 @@ if version >= 703
 endif
 
 set lazyredraw
-set history=1000
 set autochdir
 set listchars=tab:»·,trail:·
 set list
@@ -152,7 +120,6 @@ set ignorecase
 set smartcase
 set gdefault
 set incsearch
-set showmatch
 set hlsearch
 
 " spell checking
@@ -219,7 +186,6 @@ endif
 " colorscheme
 call togglebg#map("<leader>b")
 
-syntax on
 if has("gui_running")
   set background=dark
 else
