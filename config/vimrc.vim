@@ -12,7 +12,11 @@ filetype off
 execute pathogen#infect()
 
 " run vim-sensible
-runtime! plugin/sensible.vim
+if has("win32") || has("win64")
+  runtime! $HOME/vimfiles/bundle/vim-sensible/plugin/sensible.vim
+else
+  runtime! $HOME/.vim/bundle/vim-sensible/plugin/sensible.vim
+endif
 
 " disable mode lines (security measure)
 set nomodeline
