@@ -92,7 +92,6 @@ endif
 
 set lazyredraw
 set autochdir
-set listchars=tab:»·,trail:·
 set list
 set fillchars+=stl:\ ,stlnc:\
 
