@@ -205,9 +205,9 @@ if has("gui_running")
   if has("win32") || has("win64")
     set guifont=Consolas:h10
   elseif has("gui_macvim") || has("mac") || has("macunix")
-    set guifont=Menlo\ for\ Powerline:h12
+    set guifont=Menlo:h12
   else
-    set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+    set guifont=Ubuntu\ Mono\ 11
   endif
   set columns=120
   set lines=50
@@ -302,7 +302,7 @@ set splitbelow
 set splitright
 
 " Airline
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 let g:airline_enable_syntastic=0
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=1
