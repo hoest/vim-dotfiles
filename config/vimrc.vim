@@ -307,7 +307,7 @@ set splitright
 let g:airline_powerline_fonts=1
 let g:airline_enable_syntastic=0
 let g:airline_theme='solarized'
-let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#enabled=0
 
 " Bufferline
 let g:bufferline_echo=0
