@@ -38,6 +38,8 @@ if has("gui_running")
   set guitablabel=%N.\ %t\ %M
 endif
 
+set encoding=utf-8
+
 " just make things better
 set smartindent
 set copyindent
@@ -302,7 +304,7 @@ set splitbelow
 set splitright
 
 " Airline
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
 let g:airline_enable_syntastic=0
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=1
