@@ -13,9 +13,6 @@
 [submodule "bundle/fsharp-vim"]
 	path = bundle/fsharp-vim
 	url = https://github.com/kongo2002/fsharp-vim.git
-[submodule "bundle/vim-flake8"]
-	path = bundle/vim-flake8
-	url = https://github.com/nvie/vim-flake8.git
 [submodule "bundle/tcomment_vim"]
 	path = bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git

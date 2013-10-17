@@ -22,7 +22,7 @@ All
   git submodule init
   git submodule update
   ```
-You need to have Ack (Perl) and Python (Flake8) installed.
+You need to have Ack (Perl) and Python installed.
 
 Update all submodules:
   ```
