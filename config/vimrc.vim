@@ -295,11 +295,14 @@ nnoremap <leader>W :call StripTrailingWhitespaces()<CR>
 " strip on save
 autocmd BufWritePre * :call StripTrailingWhitespaces()
 
-" flake8 settings
-" let g:flake8_ignore="E111,E501,W391,E121"
+" Syntastic settings
+" general
+let g:syntastic_check_on_open=1
+let g:syntastic_auto_loc_list=1
 
-" Flake8 when write python file
-" autocmd BufWritePost *.py call Flake8()
+" python settings
+let g:syntastic_python_checkers=["flake8"]
+let g:syntastic_python_checker_args="--ignore=E111,E501,W391,E121"
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
