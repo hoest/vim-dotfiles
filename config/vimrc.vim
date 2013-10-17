@@ -296,10 +296,10 @@ nnoremap <leader>W :call StripTrailingWhitespaces()<CR>
 autocmd BufWritePre * :call StripTrailingWhitespaces()
 
 " flake8 settings
-let g:flake8_ignore="E111,E501,W391,E121"
+" let g:flake8_ignore="E111,E501,W391,E121"
 
 " Flake8 when write python file
-autocmd BufWritePost *.py call Flake8()
+" autocmd BufWritePost *.py call Flake8()
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
