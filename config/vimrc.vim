@@ -67,7 +67,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 
 " Add ctrlp ignore filter
 let g:ctrlp_custom_ignore={
-      \'dir': '\v[\/](build|com|db|deploy|dist|tmp|tools)$',
+      \'dir': '\v[\/](build|com|deploy|dist|tmp|tools)$',
       \'file': '\v\.(exe|obj|dll|pdb|suo|cache|pyc|swp|so|db)$'
       \}
 
@@ -95,7 +95,6 @@ endif
 set lazyredraw
 set autochdir
 set list
-set fillchars+=stl:\ ,stlnc:\
 
 if has("mouse")
   set mouse=nv " don't use mouse in insert mode
@@ -184,10 +183,6 @@ set wrap
 set formatoptions=qrn1
 set linebreak
 
-if version >= 703
-  set colorcolumn=80,120
-endif
-
 " colorscheme
 call togglebg#map("<leader>b")
 
@@ -260,6 +255,10 @@ vmap <C-j> ]egv
 " duplicate current line
 nnoremap <leader>d :t.<CR>
 
+" suffixes
+autocmd FileType xml set suffixesadd=.xml
+autocmd FileType xsl set suffixesadd=.xsl
+
 " Restore cursor position upon reopening files
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -273,7 +272,7 @@ autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | end
 autocmd BufNewFile,BufRead *.build set ft=xml
 
 " Vundle fix for 'set shellslash'
-au FileType vundle setlocal noshellslash
+autocmd FileType vundle setlocal noshellslash
 
 " cleanup whitespace
 function! StripTrailingWhitespaces()
