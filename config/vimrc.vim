@@ -231,6 +231,9 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" reopen last closed buffer; like Chrome
+nmap <C-t> :b#<CR>
+
 " use the hjkl keys the right way!
 nnoremap <up> <nop>
 nnoremap <down> <nop>
