@@ -262,6 +262,9 @@ nnoremap <leader>d :t.<CR>
 autocmd FileType xml set suffixesadd=.xml
 autocmd FileType xsl set suffixesadd=.xsl
 
+" Always evenly sizes splits when resizing
+autocmd VimResized * wincmd =
+
 " Restore cursor position upon reopening files
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
