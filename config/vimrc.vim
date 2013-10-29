@@ -11,6 +11,8 @@ filetype off
 " pathogen
 execute pathogen#infect()
 
+scriptencoding utf-8
+
 " run vim-sensible
 if has("win32") || has("win64")
   runtime! $HOME/vimfiles/bundle/vim-sensible/plugin/sensible.vim
@@ -94,6 +96,8 @@ endif
 
 set lazyredraw
 set autochdir
+
+set listchars=tab:»·,trail:·,extends:»,precedes:«,nbsp:·
 set list
 
 if has("mouse")
