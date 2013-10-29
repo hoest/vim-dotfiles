@@ -187,6 +187,11 @@ set wrap
 set formatoptions=qrn1
 set linebreak
 
+" colorcolumn
+if exists('+colorcolumn')
+  set colorcolumn=72,79
+endif
+
 " colorscheme
 call togglebg#map("<leader>b")
 
