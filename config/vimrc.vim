@@ -314,7 +314,7 @@ let g:syntastic_auto_loc_list=1
 
 " python settings
 let g:syntastic_python_checkers=["flake8"]
-let g:syntastic_python_checker_args="--ignore=E111,E501,W391,E121"
+let g:syntastic_python_flake8_args="--ignore=E111,E501,E391,E121"
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
