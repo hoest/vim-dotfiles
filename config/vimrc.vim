@@ -284,7 +284,7 @@ autocmd BufReadPost *
 autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
 
 " Build files => XML
-autocmd BufNewFile,BufRead *.build set ft=xml
+autocmd BufNewFile,BufRead *.build set ft=ant
 
 " Vundle fix for 'set shellslash'
 autocmd FileType vundle setlocal noshellslash
