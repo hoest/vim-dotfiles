@@ -310,7 +310,9 @@ autocmd BufWritePre * :call StripTrailingWhitespaces()
 " Syntastic settings
 " general
 let g:syntastic_check_on_open=1
-let g:syntastic_auto_loc_list=1
+" let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
 
 " python settings
 let g:syntastic_python_checkers=["flake8"]
@@ -322,7 +324,7 @@ set splitright
 
 " Airline
 let g:airline_powerline_fonts=1
-let g:airline_enable_syntastic=0
+let g:airline_enable_syntastic=1
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=0
 
