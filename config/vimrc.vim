@@ -137,6 +137,8 @@ nmap <silent> <leader>s :set spell!<CR>
 
 nnoremap <leader>m :w <BAR> !lessc % > ../css/%:t:r.css<CR>
 
+let coffee_make_options = "--map --output ../js/"
+
 " clearing highlighted searches
 nnoremap <leader><space> :nohlsearch<CR>
 
