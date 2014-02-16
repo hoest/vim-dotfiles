@@ -135,6 +135,8 @@ let g:spellfile_URL="http://ftp.vim.org/pub/vim/runtime/spell/"
 set spelllang=nl,en
 nmap <silent> <leader>s :set spell!<CR>
 
+nnoremap <leader>m :w <BAR> !lessc % > ../css/%:t:r.css<CR>
+
 " clearing highlighted searches
 nnoremap <leader><space> :nohlsearch<CR>
 
