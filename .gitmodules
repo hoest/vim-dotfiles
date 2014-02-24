@@ -22,21 +22,12 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/Windows-PowerShell-Syntax-Pluginadd"]
 	path = bundle/Windows-PowerShell-Syntax-Pluginadd
 	url = https://github.com/vim-scripts/Windows-PowerShell-Syntax-Plugin.git
-[submodule "bundle/gundo.vim"]
-	path = bundle/gundo.vim
-	url = https://github.com/sjl/gundo.vim.git
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule "bundle/ack.vim"]
-	path = bundle/ack.vim
-	url = https://github.com/mileszs/ack.vim.git
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
@@ -52,9 +43,6 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule "bundle/vim-easymotion"]
-	path = bundle/vim-easymotion
-	url = https://github.com/Lokaltog/vim-easymotion/
 [submodule "fonts/consolas"]
 	path = fonts/consolas
 	url = https://github.com/nicolalamacchia/powerline-consolas.git
