@@ -70,7 +70,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 " Add ctrlp ignore filter
 let g:ctrlp_custom_ignore={
       \'dir': '\v[\/](build|com|deploy|dist|tmp|tools)$',
-      \'file': '\v\.(exe|obj|dll|pdb|suo|cache|pyc|swp|so|db)$'
+      \'file': '\v\.(exe|obj|dll|pdb|suo|cache|pyc|swp|so|db|map)$'
       \}
 
 " Keep cache
@@ -162,14 +162,6 @@ nnoremap <leader>fc v%zf
 " re-hardwrap paragraph
 nnoremap <leader>q gqip
 
-" Ack searching
-nnoremap <leader>a :Ack!<space>
-
-" OSX use 'the_silver_searcher'/'ag'
-if has("gui_macvim") || has("mac") || has("macunix")
-  let g:ackprg = "ag --nogroup --nocolor --column"
-endif
-
 " Run a Powershell command
 nnoremap <leader>S :!powershell<space>-command<space>
 
@@ -225,9 +217,6 @@ endif
 
 " Numbers
 nnoremap <leader>n :NumbersToggle<CR>
-
-" Gundo
-nnoremap <leader>u :GundoToggle<CR>
 
 " Use Q for formatting the current paragraph (or selection)
 nnoremap Q gqap
@@ -314,8 +303,6 @@ autocmd BufWritePre * :call StripTrailingWhitespaces()
 " Syntastic settings
 " general
 let g:syntastic_check_on_open=1
-" let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 
 " python settings
@@ -331,6 +318,3 @@ let g:airline_powerline_fonts=1
 let g:airline_enable_syntastic=1
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=0
-
-" Bufferline
-let g:bufferline_echo=0
