@@ -61,11 +61,11 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " UltiSnip
 if has("win32") || has("win64")
-  set rtp+=~/vimfiles/snippets/
+  set rtp+=~/vimfiles/ultisnips/
 else
-  set rtp+=~/.vim/snippets/
+  set rtp+=~/.vim/ultisnips/
 endif
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+let g:UltiSnipsSnippetDirectories=["ultisnips"]
 
 " Add ctrlp ignore filter
 let g:ctrlp_custom_ignore={
