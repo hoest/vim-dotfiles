@@ -130,6 +130,9 @@ set gdefault
 set incsearch
 set hlsearch
 
+" Ack
+nnoremap <leader>a :Ack!<space>
+
 " spell checking
 let g:spellfile_URL="http://ftp.vim.org/pub/vim/runtime/spell/"
 set spelllang=nl,en
