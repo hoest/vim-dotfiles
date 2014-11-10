@@ -150,17 +150,8 @@ nnoremap <leader>fx :1,%s/>\s*</>\r</gg<CR>gg=G<CR>
 " close a tag in XML
 inoremap <M-.> </<C-X><C-O>
 
-set foldlevelstart=99
-set foldmethod=indent
-
-" Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
-
-" fold tag
-nnoremap <leader>ft Vatzf
-" fold from current
-nnoremap <leader>fc v%zf
+" diable fold
+set nofoldenable
 
 " re-hardwrap paragraph
 nnoremap <leader>q gqip
