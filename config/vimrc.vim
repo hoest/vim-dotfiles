@@ -69,7 +69,7 @@ let g:UltiSnipsSnippetDirectories=["ultisnips"]
 
 " Add ctrlp ignore filter
 let g:ctrlp_custom_ignore={
-      \'dir': '\v[\/](build|com|deploy|dist|tmp|tools)$',
+      \'dir': '\v[\/](build|com|deploy|dist|tmp|tools|node_modules)$',
       \'file': '\v\.(exe|obj|dll|pdb|suo|cache|pyc|swp|so|db|map)$'
       \}
 
@@ -230,6 +230,8 @@ vnoremap <F1> <ESC>
 
 " reopen last closed buffer; like Chrome
 nmap <C-t> :b#<CR>
+" delete current buffer; but keep split
+nmap <leader>D :bp\|bd #<CR>
 
 " use the hjkl keys the right way!
 nnoremap <up> <nop>
