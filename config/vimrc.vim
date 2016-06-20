@@ -6,10 +6,22 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-filetype off
-
-" pathogen
-execute pathogen#infect()
+" vim-plug
+call plug#begin()
+Plug 'altercation/vim-colors-solarized'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
+Plug 'myusuf3/numbers.vim'
+Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/tComment'
+call plug#end()
 
 scriptencoding utf-8
 
@@ -58,14 +70,6 @@ set nojoinspaces
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
-
-" UltiSnip
-if has("win32") || has("win64")
-  set rtp+=~/vimfiles/ultisnips/
-else
-  set rtp+=~/.vim/ultisnips/
-endif
-let g:UltiSnipsSnippetDirectories=["ultisnips"]
 
 " Add ctrlp ignore filter
 let g:ctrlp_custom_ignore={
@@ -118,11 +122,6 @@ else
   set directory=$HOME/.vim/tmp
 endif
 
-" change the <leader> key
-" let mapleader=","
-" let g:mapleader=","
-" noremap \ ,
-
 " search stuff
 set ignorecase
 set smartcase
@@ -130,17 +129,10 @@ set gdefault
 set incsearch
 set hlsearch
 
-" Ack
-nnoremap <leader>a :Ack!<space>
-
 " spell checking
 let g:spellfile_URL="http://ftp.vim.org/pub/vim/runtime/spell/"
 set spelllang=nl,en
 nmap <silent> <leader>s :set spell!<CR>
-
-nnoremap <leader>m :w <BAR> !lessc % > ../css/%:t:r.css<CR>
-
-let coffee_make_options = "--map --output ../js/"
 
 " clearing highlighted searches
 nnoremap <leader><space> :nohlsearch<CR>
@@ -273,12 +265,6 @@ autocmd BufReadPost *
 " Big file => no syntax
 autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
 
-" Build files => XML
-autocmd BufNewFile,BufRead *.build set ft=ant
-
-" Vundle fix for 'set shellslash'
-autocmd FileType vundle setlocal noshellslash
-
 " cleanup whitespace
 function! StripTrailingWhitespaces()
   " save last search, and cursor position.
@@ -312,6 +298,6 @@ set splitbelow
 set splitright
 
 " Airline
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=0
