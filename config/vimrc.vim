@@ -192,7 +192,7 @@ colorscheme solarized
 " font and window size
 if has("gui_running")
   if has("win32") || has("win64")
-    set guifont=Consolas:h10
+    set guifont=Powerline_Consolas:h10
   elseif has("gui_macvim") || has("mac") || has("macunix")
      set guifont=Menlo\ for\ Powerline:h12
   else
@@ -286,7 +286,10 @@ autocmd BufWritePre * :call StripTrailingWhitespaces()
 " Syntastic settings
 " general
 let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=1
 let g:syntastic_enable_signs=1
+
+" javascript
 let g:syntastic_javascript_checkers = ['eslint']
 
 " python settings
@@ -298,6 +301,6 @@ set splitbelow
 set splitright
 
 " Airline
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=0
