@@ -8,12 +8,15 @@ set nocompatible
 
 " vim-plug
 call plug#begin()
+Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
+Plug 'mileszs/ack.vim'
 Plug 'myusuf3/numbers.vim'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -129,6 +132,9 @@ set gdefault
 set incsearch
 set hlsearch
 
+" Ack
+nnoremap <leader>a :Ack!<space>
+
 " spell checking
 let g:spellfile_URL="http://ftp.vim.org/pub/vim/runtime/spell/"
 set spelllang=nl,en
@@ -171,7 +177,7 @@ set linebreak
 
 " colorcolumn
 if exists('+colorcolumn')
-  set colorcolumn=72,79
+  set colorcolumn=72,79,120
 endif
 
 " colorscheme
