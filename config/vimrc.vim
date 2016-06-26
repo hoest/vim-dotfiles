@@ -198,9 +198,9 @@ colorscheme solarized
 " font and window size
 if has("gui_running")
   if has("win32") || has("win64")
-    set guifont=Powerline_Consolas:h10
+    set guifont=Hack:h10
   elseif has("gui_macvim") || has("mac") || has("macunix")
-     set guifont=Menlo\ for\ Powerline:h12
+     set guifont=Hack:h12
   else
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
   endif
