@@ -102,6 +102,7 @@ if version >= 703
 endif
 
 set lazyredraw
+set ttyfast
 set autochdir
 
 set listchars=tab:»·,trail:·,extends:»,precedes:«,nbsp:·
@@ -294,8 +295,9 @@ autocmd BufWritePre * :call StripTrailingWhitespaces()
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=1
 let g:syntastic_enable_signs=1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_loc_list_height=5
+let g:syntastic_auto_loc_list=0
 
 " javascript
 let g:syntastic_javascript_checkers = ['eslint']
