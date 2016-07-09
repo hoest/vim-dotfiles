@@ -13,10 +13,12 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'mileszs/ack.vim'
+Plug 'morhetz/gruvbox'
 Plug 'myusuf3/numbers.vim'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -187,14 +189,12 @@ call togglebg#map("<leader>b")
 if has("gui_running")
   set background=dark
 else
-  let g:solarized_termcolors=256
-  let g:solarized_termtrans=1
   set t_Co=256
   set background=dark
 endif
 
-let g:solarized_hitrail=1
-colorscheme solarized
+" colorscheme
+colorscheme gruvbox
 
 " font and window size
 if has("gui_running")
@@ -312,5 +312,5 @@ set splitright
 
 " Airline
 let g:airline_powerline_fonts=1
-let g:airline_theme='solarized'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled=0
