@@ -58,6 +58,8 @@ if has("gui_running")
 endif
 
 set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=
 
 " just make things better
 set smartindent
@@ -300,7 +302,7 @@ let g:syntastic_loc_list_height=5
 let g:syntastic_auto_loc_list=0
 
 " javascript
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers=['eslint']
 
 " python settings
 let g:syntastic_python_checkers=["flake8"]
