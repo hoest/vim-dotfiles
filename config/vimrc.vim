@@ -8,7 +8,7 @@ set nocompatible
 
 " vim-plug
 call plug#begin()
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
@@ -105,14 +105,6 @@ if version >= 703
   set undolevels=1000
   set undoreload=10000
 endif
-
-if has("win32") || has("win64")
-  let g:prosession_dir='~/vimfiles/session'
-else
-  let g:prosession_dir='~/.vim/session'
-endif
-let g:prosession_on_startup=1
-let g:prosession_default_session=1
 
 set lazyredraw
 set ttyfast
@@ -326,4 +318,17 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled=0
 
-set diffexpr= " install a diff.exe for Windows, and reset diffexpr
+" GitGutter
+let g:gitgutter_realtime=0
+
+" Prosession
+if has("win32") || has("win64")
+  let g:prosession_dir='~/vimfiles/session'
+else
+  let g:prosession_dir='~/.vim/session'
+endif
+let g:prosession_on_startup=1
+let g:prosession_default_session=1
+
+" install a diff.exe for Windows, and reset diffexpr
+set diffexpr=
