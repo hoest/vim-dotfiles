@@ -26,6 +26,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/tComment'
+Plug 'dhruvasagar/vim-prosession'
 call plug#end()
 
 scriptencoding utf-8
@@ -104,6 +105,14 @@ if version >= 703
   set undolevels=1000
   set undoreload=10000
 endif
+
+if has("win32") || has("win64")
+  let g:prosession_dir='~/vimfiles/session'
+else
+  let g:prosession_dir='~/.vim/session'
+endif
+let g:prosession_on_startup=1
+let g:prosession_default_session=1
 
 set lazyredraw
 set ttyfast
