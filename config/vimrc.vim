@@ -258,7 +258,7 @@ vmap <C-j> ]egv
 nnoremap <leader>d :t.<CR>
 
 " reload .vimrc
-map <leader>s :source $MYVIMRC<CR>
+map <leader>r :source $MYVIMRC<CR>
 
 " suffixes
 autocmd FileType xml set suffixesadd=.xml
