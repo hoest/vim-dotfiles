@@ -75,16 +75,16 @@ set shellslash
 set nojoinspaces
 
 " Supertab
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType="context"
 
 " Add ctrlp ignore filter
 let g:ctrlp_custom_ignore={
-      \'dir': '\v[\/](build|com|deploy|dist|tmp|tools|node_modules)$',
+      \'dir': '\v[\/](build|bin|obj|com|deploy|dist|tmp|tools|node_modules)$',
       \'file': '\v\.(exe|obj|dll|pdb|suo|cache|pyc|swp|so|db|map)$'
       \}
 
-" Keep cache
-let g:ctrlp_clear_cache_on_exit = 0
+" Emtpy cache
+let g:ctrlp_clear_cache_on_exit=1
 
 " Add .ctrlp file as root marker
 let g:ctrlp_root_markers=[".ctrlp"]
@@ -257,6 +257,9 @@ vmap <C-j> ]egv
 " duplicate current line
 nnoremap <leader>d :t.<CR>
 
+" reload .vimrc
+map <leader>s :source $MYVIMRC<CR>
+
 " suffixes
 autocmd FileType xml set suffixesadd=.xml
 autocmd FileType xsl set suffixesadd=.xsl
@@ -277,8 +280,8 @@ autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | end
 function! StripTrailingWhitespaces()
   " save last search, and cursor position.
   let _s=@/
-  let l = line(".")
-  let c = col(".")
+  let l=line(".")
+  let c=col(".")
   " Do the business:
   %s/\s\+$//e
   " Clean up: restore previous search history, and cursor position
