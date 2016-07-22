@@ -5,18 +5,19 @@ set nocompatible
 " vim-plug
 call plug#begin()
 " Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
+Plug 'matze/vim-move'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 Plug 'myusuf3/numbers.vim'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-obsession' | Plug 'dhruvasagar/vim-prosession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -24,7 +25,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/tComment'
-Plug 'dhruvasagar/vim-prosession'
 call plug#end()
 
 scriptencoding utf-8
@@ -62,8 +62,11 @@ set fileencodings=
 
 " just make things better
 set smartindent
-set copyindent
+set smarttab
+set autoindent
+" set copyindent
 set showmode
+set showmatch " highlight maching parenthesis
 set hidden
 set visualbell
 set noerrorbells
@@ -73,15 +76,16 @@ set ttyfast
 set number
 set shellslash
 set nojoinspaces
+set backspace=2 " make backspace work like most other apps
 
 " Supertab
 let g:SuperTabDefaultCompletionType="context"
 
 " Add ctrlp ignore filter
 let g:ctrlp_custom_ignore={
-      \'dir': '\v[\/](build|bin|obj|com|deploy|dist|tmp|tools|node_modules)$',
-      \'file': '\v\.(exe|obj|dll|pdb|suo|cache|pyc|swp|so|db|map)$'
-      \}
+  \'dir': '\v[\/](build|bin|obj|com|deploy|dist|tmp|tools|node_modules)$',
+  \'file': '\v\.(exe|obj|dll|pdb|suo|cache|pyc|swp|so|db|map)$'
+  \}
 
 " Emtpy cache
 let g:ctrlp_clear_cache_on_exit=1
@@ -207,7 +211,7 @@ if has("gui_running")
     set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
   endif
   set columns=120
-  set lines=50
+  set lines=35
 endif
 
 " Numbers
@@ -248,11 +252,8 @@ nmap <C-k> [e
 nmap <C-Down> ]e
 nmap <C-j> ]e
 
-" Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-k> [egv
-vmap <C-Down> ]egv
-vmap <C-j> ]egv
+" vim-move
+let g:move_key_modifier = 'C'
 
 " duplicate current line
 nnoremap <leader>d :t.<CR>
@@ -317,10 +318,16 @@ set splitright
 " Airline
 let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
-let g:airline#extensions#tabline#enabled=0
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#buffer_nr_show=1
+let g:airline#extensions#tabline#fnamemod = ':p:t'
 
 " GitGutter
 let g:gitgutter_realtime=0
+
+" Rooter
+let g:rooter_change_directory_for_non_project_files='current'
+let g:rooter_patterns=['.ctrlp', 'project.xml', 'CVS', '.git/']
 
 " Prosession
 if has("win32") || has("win64")
