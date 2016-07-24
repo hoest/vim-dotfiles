@@ -14,7 +14,6 @@ Plug 'matze/vim-move'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 Plug 'myusuf3/numbers.vim'
-Plug 'OmniSharp/omnisharp-vim'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-dispatch'
@@ -330,9 +329,6 @@ let g:gitgutter_realtime=0
 " Rooter
 let g:rooter_change_directory_for_non_project_files='current'
 let g:rooter_patterns=['.ctrlp', 'project.xml', 'CVS', '.git/']
-
-" OmniSharp
-let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
 
 " Prosession
 if has("win32") || has("win64")
