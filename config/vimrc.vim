@@ -5,6 +5,7 @@ set nocompatible
 " vim-plug
 call plug#begin()
 " Plug 'airblade/vim-gitgutter'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -13,9 +14,10 @@ Plug 'matze/vim-move'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 Plug 'myusuf3/numbers.vim'
+Plug 'OmniSharp/omnisharp-vim'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession' | Plug 'dhruvasagar/vim-prosession'
 Plug 'tpope/vim-repeat'
@@ -328,6 +330,9 @@ let g:gitgutter_realtime=0
 " Rooter
 let g:rooter_change_directory_for_non_project_files='current'
 let g:rooter_patterns=['.ctrlp', 'project.xml', 'CVS', '.git/']
+
+" OmniSharp
+let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
 
 " Prosession
 if has("win32") || has("win64")
