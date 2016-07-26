@@ -5,7 +5,6 @@ set nocompatible
 " vim-plug
 call plug#begin()
 " Plug 'airblade/vim-gitgutter'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -14,8 +13,10 @@ Plug 'matze/vim-move'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 Plug 'myusuf3/numbers.vim'
+Plug 'OmniSharp/Omnisharp-vim'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession' | Plug 'dhruvasagar/vim-prosession'
@@ -67,7 +68,7 @@ set smarttab
 set autoindent
 " set copyindent
 set showmode
-set showmatch " highlight maching parenthesis
+set noshowmatch
 set hidden
 set visualbell
 set noerrorbells
@@ -75,7 +76,6 @@ set title
 set cursorline
 set ttyfast
 set number
-set shellslash
 set nojoinspaces
 set backspace=2 " make backspace work like most other apps
 
@@ -338,6 +338,9 @@ else
 endif
 let g:prosession_on_startup=1
 let g:prosession_default_session=1
+
+" OmniSharp
+let g:OmniSharp_selector_ui = 'ctrlp' " Use ctrlp.vim
 
 " install a diff.exe for Windows, and reset diffexpr
 set diffexpr=
