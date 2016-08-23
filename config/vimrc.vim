@@ -4,7 +4,7 @@ set nocompatible
 
 " vim-plug
 call plug#begin()
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
