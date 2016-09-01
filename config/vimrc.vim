@@ -8,6 +8,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'matze/vim-move'
 Plug 'mileszs/ack.vim'
@@ -340,6 +341,9 @@ let g:prosession_default_session=1
 
 " OmniSharp
 let g:OmniSharp_selector_ui = 'ctrlp' " Use ctrlp.vim
+
+" EditorConfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " install a diff.exe for Windows, and reset diffexpr
 set diffexpr=
