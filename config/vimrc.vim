@@ -278,6 +278,9 @@ autocmd BufReadPost *
 " Big file => no syntax
 autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
 
+" Nant Build file
+au BufRead,BufNewFile *.build set filetype=xml
+
 " cleanup whitespace
 function! StripTrailingWhitespaces()
   " save last search, and cursor position.
