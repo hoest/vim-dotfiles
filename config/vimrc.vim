@@ -348,5 +348,20 @@ let g:OmniSharp_selector_ui = 'ctrlp' " Use ctrlp.vim
 " EditorConfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
+" Ag; Silver Surfer
+if executable('ag')
+  " Ack.vim
+  let g:ackprg = 'ag --vimgrep'
+
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
 " install a diff.exe for Windows, and reset diffexpr
 set diffexpr=
