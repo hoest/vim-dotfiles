@@ -310,6 +310,7 @@ let g:syntastic_auto_loc_list=1
 
 " javascript
 let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 " python settings
 let g:syntastic_python_checkers=["flake8"]
