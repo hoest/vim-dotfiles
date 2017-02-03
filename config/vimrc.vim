@@ -341,7 +341,7 @@ else
   let g:prosession_dir='~/.vim/session'
 endif
 let g:prosession_on_startup=1
-let g:prosession_default_session=1
+" let g:prosession_default_session=1
 
 " OmniSharp
 let g:OmniSharp_selector_ui = 'ctrlp' " Use ctrlp.vim
