@@ -14,7 +14,6 @@ Plug 'matze/vim-move'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 Plug 'myusuf3/numbers.vim'
-Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-dispatch'
@@ -27,6 +26,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/tComment'
+Plug 'w0rp/ale'
 call plug#end()
 
 scriptencoding utf-8
@@ -299,27 +299,10 @@ nnoremap <leader>W :call StripTrailingWhitespaces()<CR>
 " strip on save
 autocmd BufWritePre * :call StripTrailingWhitespaces()
 
-" Syntastic settings
-" general
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=1
-let g:syntastic_enable_signs=1
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_loc_list_height=5
-let g:syntastic_auto_loc_list=1
-
-" javascript
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
-
 " prettier
 autocmd FileType javascript set formatprg=prettier\ --stdin
 autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
 autocmd BufWritePre *.jsx exe "normal! gggqG\<C-o>\<C-o>"
-
-" python settings
-let g:syntastic_python_checkers=["flake8"]
-let g:syntastic_python_flake8_args="--ignore=E111,E501,E391,E121"
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -328,6 +311,7 @@ set splitright
 " Airline
 let g:airline_powerline_fonts=1
 let g:airline_theme='gruvbox'
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#buffer_nr_show=1
 let g:airline#extensions#tabline#fnamemod = ':p:t'
