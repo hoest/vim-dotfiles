@@ -16,7 +16,6 @@ Plug 'morhetz/gruvbox'
 Plug 'myusuf3/numbers.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession' | Plug 'dhruvasagar/vim-prosession'
@@ -363,3 +362,9 @@ if &term =~ '256color'
   " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
   set t_ut=
 endif
+
+" ALE
+let b:ale_fixers = ['trim_whitespace', 'prettier', 'eslint']
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_sign_column_always = 1
