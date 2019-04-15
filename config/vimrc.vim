@@ -2,6 +2,10 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" language
+set langmenu=en_US.UTF-8
+language messages en_US.UTF-8
+
 " vim-plug
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
@@ -300,9 +304,9 @@ nnoremap <leader>W :call StripTrailingWhitespaces()<CR>
 autocmd BufWritePre * :call StripTrailingWhitespaces()
 
 " prettier
-autocmd FileType javascript set formatprg=prettier\ --stdin
-autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
-autocmd BufWritePre *.jsx exe "normal! gggqG\<C-o>\<C-o>"
+" autocmd FileType javascript set formatprg=prettier\ --stdin
+" autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
+" autocmd BufWritePre *.jsx exe "normal! gggqG\<C-o>\<C-o>"
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -369,5 +373,4 @@ let g:ale_completion_enabled = 0
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 let g:ale_sign_column_always = 1
-let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
