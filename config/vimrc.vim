@@ -369,6 +369,7 @@ if &term =~ '256color'
 endif
 
 " ALE
+let b:ale_linters = ['eslint']
 let b:ale_fixers = ['trim_whitespace', 'prettier', 'eslint']
 let g:ale_completion_enabled = 0
 let g:ale_fix_on_save = 1
