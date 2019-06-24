@@ -161,7 +161,7 @@ nnoremap <leader>fx :1,%s/>\s*</>\r</gg<CR>gg=G<CR>
 " close a tag in XML
 inoremap <M-.> </<C-X><C-O>
 
-" diable fold
+" disable fold
 set nofoldenable
 
 " re-hardwrap paragraph
