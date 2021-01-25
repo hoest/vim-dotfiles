@@ -22,7 +22,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-obsession' | Plug 'dhruvasagar/vim-prosession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -327,15 +326,6 @@ let g:gitgutter_realtime=0
 let g:rooter_change_directory_for_non_project_files='current'
 let g:rooter_patterns=['.ctrlp', 'project.xml', 'CVS', '.git/']
 let g:rooter_silent_chdir = 1
-
-" Prosession
-if has("win32") || has("win64")
-  let g:prosession_dir='~/vimfiles/session'
-else
-  let g:prosession_dir='~/.vim/session'
-endif
-let g:prosession_on_startup=1
-" let g:prosession_default_session=1
 
 " OmniSharp
 let g:OmniSharp_selector_ui = 'ctrlp' " Use ctrlp.vim
