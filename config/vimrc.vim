@@ -208,7 +208,7 @@ colorscheme gruvbox
 " font and window size
 if has("gui_running")
   if has("win32") || has("win64")
-    set guifont=Powerline_Consolas:h10
+    set guifont=Consolas\ NF:h10
   elseif has("gui_macvim") || has("mac") || has("macunix")
      set guifont=Menlo\ for\ Powerline:h12
   else
