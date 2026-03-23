@@ -212,7 +212,7 @@ if has("gui_running")
   elseif has("gui_macvim") || has("mac") || has("macunix")
      set guifont=Menlo\ for\ Powerline:h12
   else
-    set guifont=Source\ Code\ Pro
+    set guifont=Adwaita\ Mono
   endif
   set columns=120
   set lines=35
