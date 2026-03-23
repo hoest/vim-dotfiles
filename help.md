@@ -1,211 +1,593 @@
-# 🧠 Overzicht van jouw Vim-configuratie
+# 🧠 1. Wat voor Vim-setup heb jij?
 
-Jouw configuratie is eigenlijk geen “los .vimrc-bestand”, maar een **complete ontwikkelomgeving** met:
+Jouw config is:
 
-* Vim / Neovim (editor)
-* Tmux (terminal multiplexer)
-* Zsh (shell)
-* Plugins (zoals autocomplete en file navigation)
-
-Alles is zo ingesteld dat je **snel kunt navigeren, coderen en schakelen tussen bestanden** zonder je muis te gebruiken.
-
----
-
-# ⌨️ Belangrijkste concept: de *leader key*
-
-Je hebt de standaard Vim leader key (`\`) vervangen door:
-
-👉 `,` (komma)
+👉 **klassieke Vim + plugins, zonder LSP (geen CoC)**
+👉 **gericht op snelheid, search en tekstbewerking**
+👉 **sterk leunend op CtrlP + Ack + ALE**
 
 Dus:
 
-* `,w` = leader + w
-* `,q` = leader + q
-
-Dit is belangrijk, want bijna al je shortcuts beginnen hiermee.
+* ❌ geen IDE-achtige setup (zoals CoC / LSP)
+* ✅ wel snelle navigation + linting + formatting
 
 ---
 
-# 📂 Tabs & bestanden (belangrijkste shortcuts)
+# ⚙️ 2. Core Vim gedrag
 
-## Tabs openen en wisselen
-
-| Shortcut      | Wat doet het                         |
-| ------------- | ------------------------------------ |
-| `Ctrl + t`    | Nieuwe tab openen                    |
-| `,1` t/m `,9` | Ga naar specifieke tab               |
-| `,0`          | Ga naar laatste tab                  |
-| `Alt + 1..9`  | Zelfde maar werkt ook in insert mode |
-| `,fn`         | Volgende tab                         |
-| `,fp`         | Vorige tab                           |
-
-## Tabs verplaatsen/sluiten
-
-| Shortcut          | Wat doet het                  |
-| ----------------- | ----------------------------- |
-| `,fh`             | Tab naar links                |
-| `,fl`             | Tab naar rechts               |
-| `,qq`             | Huidige tab sluiten           |
-| `,qo`             | Alles sluiten behalve huidige |
-| `,q1`, `,q2`, etc | Specifieke tab sluiten        |
-
-👉 Dit maakt tabs bijna als “browser tabs”.
-
----
-
-# 🧭 Navigatie & cursor gedrag
-
-Je gebruikt standaard Vim-bewegingen, maar waarschijnlijk aangevuld met plugins:
-
-* `h j k l` → bewegen
-* Sneller springen door relatieve nummers (vaak ingesteld)
-* `%` → matching brackets
-
-Vaak zit hier ook slimme navigation via plugins (zoals tags / fuzzy search).
-
----
-
-# 🔍 Zoeken en bestanden openen
-
-In combinatie met tools zoals fzf:
-
-| Shortcut              | Wat doet het                |
-| --------------------- | --------------------------- |
-| `ff` (in terminal)    | Zoek bestand en open in Vim |
-| `Ctrl + t` (terminal) | Kies bestand en plak naam   |
-| `Alt + c`             | Navigeer naar directory     |
-
-👉 Dit vervangt grotendeels “Explorer klikken”.
-
----
-
-# 🧩 Plugins (belangrijk gedrag)
-
-Je config gebruikt een plugin manager (waarschijnlijk vim-plug).
-
-Typische features:
-
-### Autocomplete (via CoC)
-
-* Suggesties tijdens typen
-* Tab completion
-* Lijkt op VS Code gedrag
-
-### File tree (NERDTree-achtig)
-
-* Project structuur bekijken
-
-### Status bar
-
-* Informatie onderin (bestand, git status etc.)
-
-### Syntax highlighting
-
-* Voor veel talen automatisch
-
----
-
-# 🎨 UI & uiterlijk
-
-## In Vim:
-
-| Shortcut | Wat doet het             |
-| -------- | ------------------------ |
-| `,b`     | Light/dark mode wisselen |
-| `,o`     | Transparantie toggelen   |
-
-👉 Werkt samen met je terminal (Alacritty).
-
----
-
-# 🖥️ Tmux (heel belangrijk!)
-
-Je gebruikt Tmux als “laag onder Vim”.
-
-## Prefix key
-
-👉 `Ctrl + a`
-
-Daarna druk je een tweede toets.
-
----
-
-## Sessies
-
-| Shortcut   | Wat doet het  |
-| ---------- | ------------- |
-| `Ctrl+a c` | Nieuwe sessie |
-| `Ctrl+a s` | Kies sessie   |
-| `Ctrl+a $` | Rename sessie |
-
----
-
-## Vensters
-
-| Shortcut      | Wat doet het   |
-| ------------- | -------------- |
-| `Ctrl+a c`    | Nieuw window   |
-| `Ctrl+a n`    | Volgende       |
-| `Ctrl+a p`    | Vorige         |
-| `Ctrl+a 1..9` | Ga naar window |
-
----
-
-## Panels (splits)
-
-| Shortcut         | Wat doet het |
-| ---------------- | ------------ |
-| `Ctrl+a Ctrl+t`  | Nieuwe pane  |
-| `Ctrl+a H/J/K/L` | Resize pane  |
-
----
-
-## Copy mode (heel handig!)
-
-| Shortcut   | Wat doet het |
-| ---------- | ------------ |
-| `Ctrl+a [` | Copy mode    |
-| `v`        | Selecteren   |
-| `Enter`    | Kopiëren     |
-| `Ctrl+a ]` | Plakken      |
-
----
-
-# 🧵 Terminal (Alacritty)
-
-Extra shortcuts:
-
-| Shortcut         | Wat doet het        |
-| ---------------- | ------------------- |
-| `Cmd + n`        | Nieuwe terminal     |
-| `Cmd + f`        | Zoeken              |
-| `Cmd + + / -`    | Font groter/kleiner |
-| `Ctrl + Cmd + f` | Fullscreen          |
-
----
-
-# 🐚 Zsh (shell shortcuts)
-
-| Shortcut   | Wat doet het            |
-| ---------- | ----------------------- |
-| `ff`       | Bestand zoeken + openen |
-| `Ctrl + t` | Bestand selecteren      |
-| `Alt + c`  | Directory kiezen        |
-
----
-
-# ⚙️ Eigen uitbreidingen
-
-Je hebt bewust ruimte gelaten voor eigen config:
-
-### Plugins toevoegen:
+## Basis
 
 ```vim
-~/.vimrc.plugins.local
+set nocompatible
 ```
 
-### Eigen instellingen:
+→ moderne Vim (niet vi)
+
+---
+
+## Encoding
 
 ```vim
-~/.vimrc.local
+set encoding=utf-8
+set termencoding=utf-8
 ```
+
+→ alles UTF-8
+
+---
+
+## Indentatie
+
+```vim
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+```
+
+👉 altijd 2 spaties, nooit tabs
+
+---
+
+## Editing gedrag
+
+```vim
+set smartindent
+set autoindent
+set smarttab
+```
+
+→ slimme inspringing
+
+---
+
+## UI
+
+```vim
+set number
+set cursorline
+set title
+set showmode
+```
+
+→ duidelijke visuele feedback
+
+---
+
+## Performance
+
+```vim
+set lazyredraw
+set ttyfast
+```
+
+→ sneller renderen
+
+---
+
+## Clipboard
+
+```vim
+set clipboard=unnamed
+```
+
+👉 ALLES gaat naar je systeem clipboard (belangrijk!)
+
+---
+
+## Bestanden / swap
+
+```vim
+set swapfile
+set nobackup
+set nowritebackup
+```
+
+→ wel swap, geen backups
+
+---
+
+## Zoekgedrag
+
+```vim
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set hlsearch
+```
+
+👉 super belangrijk:
+
+* `/foo` → case-insensitive
+* `/Foo` → case-sensitive
+* vervangingen zijn standaard global (`:%s/foo/bar/`)
+
+---
+
+## Lange regels
+
+```vim
+set wrap
+set linebreak
+```
+
+→ netjes afbreken op woorden
+
+---
+
+## Visuele whitespace
+
+```vim
+set list
+set listchars=tab:»·,trail:·,...
+```
+
+👉 je ziet tabs en trailing spaces
+
+---
+
+## Automatisch van directory wisselen
+
+```vim
+set autochdir
+```
+
+👉 working directory volgt het bestand
+
+---
+
+# ⌨️ 3. Key mappings (VOLLEDIG)
+
+Je gebruikt **standaard leader: `\`**
+
+---
+
+## 🔹 Search & navigation
+
+### Ack (super belangrijk)
+
+```vim
+nnoremap <leader>a :Ack!<space>
+```
+
+👉 Gebruik:
+
+```
+\a zoekterm
+```
+
+→ zoekt in project (via `ag`)
+
+---
+
+### Clear search
+
+```vim
+nnoremap <leader><space> :nohlsearch
+```
+
+👉 `\ + spatie`
+
+---
+
+## 🔹 Spell check
+
+```vim
+nmap <leader>s :set spell!
+```
+
+👉 toggle spellcheck
+
+---
+
+## 🔹 XML tools
+
+```vim
+nnoremap <leader>fx ...
+```
+
+👉 maakt XML netjes (line breaks + indent)
+
+---
+
+```vim
+inoremap <M-.> </<C-X><C-O>
+```
+
+👉 Alt + . → sluit XML tag automatisch
+
+---
+
+## 🔹 Formatting
+
+```vim
+nnoremap <leader>q gqip
+nnoremap Q gqap
+vnoremap Q gq
+```
+
+👉 tekst netjes herformatteren
+
+---
+
+## 🔹 PowerShell
+
+```vim
+nnoremap <leader>S :!powershell -command
+```
+
+👉 shell command runnen
+
+---
+
+## 🔹 Paste mode
+
+```vim
+<F2> → toggle paste mode
+```
+
+👉 voorkomt auto-indent bij plakken
+
+---
+
+## 🔹 Yank
+
+```vim
+nnoremap Y y$
+```
+
+👉 Y = tot einde regel (consistent met D en C)
+
+---
+
+## 🔹 File openen
+
+```vim
+nnoremap <leader>gf :e <cfile>
+```
+
+👉 opent bestand onder cursor
+
+---
+
+## 🔹 Numbers toggle
+
+```vim
+nnoremap <leader>n :NumbersToggle
+```
+
+👉 wisselt relatieve/absolute nummers
+
+---
+
+## 🔹 Retab
+
+```vim
+nmap <leader>T :retab!
+```
+
+👉 converteert tabs ↔ spaces
+
+---
+
+## 🔹 Buffers
+
+```vim
+<C-t> → vorige buffer
+```
+
+👉 zoals “tab terug” in browser
+
+---
+
+```vim
+<leader>D → buffer sluiten maar split behouden
+```
+
+---
+
+## 🔹 Movement tweaks
+
+```vim
+nnoremap j gj
+nnoremap k gk
+```
+
+👉 bewegen per visuele regel (bij wrap!)
+
+---
+
+```vim
+arrow keys disabled
+```
+
+👉 je dwingt jezelf tot hjkl
+
+---
+
+## 🔹 Lines verplaatsen
+
+```vim
+<C-Up> / <C-Down>
+<C-k> / <C-j>
+```
+
+👉 regels omhoog/omlaag “bubblen”
+
+---
+
+## 🔹 Duplicate line
+
+```vim
+<leader>d
+```
+
+---
+
+## 🔹 Reload config
+
+```vim
+<leader>r
+```
+
+---
+
+## 🔹 Strip whitespace
+
+```vim
+<leader>W
+```
+
+👉 trailing spaces verwijderen
+
+---
+
+# 🧩 4. Plugins (exact + jouw gebruik)
+
+---
+
+## 🔶 1. ctrlp.vim (centrale navigatie)
+
+👉 Jouw primaire file finder
+
+### Config:
+
+* negeert build/node_modules etc.
+* gebruikt `ag` als backend
+* caching uit (want ag is snel)
+
+👉 Gebruik:
+
+```
+:CtrlP
+```
+
+---
+
+## 🔶 2. ack.vim + ag
+
+👉 zoeken in project
+
+### Jouw setup:
+
+```vim
+let g:ackprg = 'ag --vimgrep'
+```
+
+👉 supersnel zoeken
+
+---
+
+## 🔶 3. ale (linting + fixing)
+
+👉 jouw “code intelligence”
+
+### Doet:
+
+* linting (errors/warnings)
+* auto-fix bij opslaan
+
+```vim
+let g:ale_fixers = ['trim_whitespace', 'prettier', 'eslint']
+let g:ale_fix_on_save = 1
+```
+
+👉 Dus bij save:
+
+* whitespace weg
+* prettier
+* eslint fix
+
+---
+
+## 🔶 4. vim-gitgutter
+
+👉 toont git wijzigingen in de gutter
+
+* realtime UIT (performance)
+
+---
+
+## 🔶 5. vim-fugitive
+
+👉 git commands in Vim
+
+Gebruik:
+
+```
+:G
+:Gdiff
+:Gblame
+```
+
+---
+
+## 🔶 6. vim-rooter
+
+👉 automatisch naar project root
+
+```vim
+let g:rooter_patterns=['.ctrlp', 'project.xml', '.git/']
+```
+
+---
+
+## 🔶 7. vim-airline
+
+👉 statusbar
+
+### Extra:
+
+* ALE integratie
+* tabline met buffers
+
+---
+
+## 🔶 8. vim-surround
+
+👉 tekst manipulatie (quotes, tags)
+
+---
+
+## 🔶 9. vim-unimpaired
+
+👉 handige shortcuts zoals:
+
+* `[e` / `]e` → errors navigeren
+* etc.
+
+---
+
+## 🔶 10. vim-move
+
+👉 regels verplaatsen
+
+```vim
+let g:move_key_modifier = 'C'
+```
+
+→ Ctrl + beweging
+
+---
+
+## 🔶 11. numbers.vim
+
+👉 toggle relatieve nummers
+
+---
+
+## 🔶 12. supertab
+
+👉 tab = autocomplete (basic)
+
+---
+
+## 🔶 13. vim-polyglot
+
+👉 syntax highlighting voor veel talen
+
+---
+
+## 🔶 14. editorconfig-vim
+
+👉 respecteert `.editorconfig`
+
+---
+
+## 🔶 15. tComment
+
+👉 comment plugin
+
+---
+
+## 🔶 16. vim-dispatch
+
+👉 async build/test runnen
+
+---
+
+# 🔄 5. Automatiseringen
+
+## Restore cursor
+
+Bij openen → terug naar laatste positie
+
+---
+
+## Strip whitespace
+
+* handmatig: `\W`
+* automatisch bij save
+
+---
+
+## Grote bestanden
+
+> > 1MB → syntax uit (performance)
+
+---
+
+## Splits
+
+```vim
+set splitbelow
+set splitright
+```
+
+👉 nieuwe splits voelen natuurlijk
+
+---
+
+## Resize
+
+```vim
+autocmd VimResized * wincmd =
+```
+
+👉 alles blijft netjes verdeeld
+
+---
+
+# 🧭 6. Hoe jij Vim gebruikt (praktisch)
+
+Jouw workflow:
+
+### 🔍 Navigeren
+
+* `:CtrlP` → bestand zoeken
+* `\a` → tekst zoeken
+
+### ✏️ Bewerken
+
+* standaard Vim + surround + move
+
+### 🧹 Opslaan
+
+* ALE fixt automatisch
+* whitespace wordt gestript
+
+### 🧠 Feedback
+
+* ALE toont errors
+* gitgutter toont changes
